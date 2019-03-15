@@ -1,0 +1,36 @@
+// Klasa zawiera definicje poszczególnych instrukcji. Przechowuje nazwe instrukcji, iloœæ parametrów wejœciowych i wyjœciowych oraz ich format
+#pragma once
+#include <string.h>
+#include "DataTypes.h"
+#include "C_Variables.h"
+#include "C_Error.h"
+#define MAXSIZE 25 
+class C_Commands
+{
+public:
+	C_Commands(void);
+	virtual void InitCommand(char* p_name,int p_numofinparam,int p_numofoutparam,DT* p_inputtype, DT* p_outputtype);
+	virtual void PrintYourself(void);
+	virtual DT* ReturnDTin(void);	//zwraca format danych wejsciowych
+	virtual DT* ReturnDTout(void);	//zwraca format danych wyjœciowych
+	virtual int ReturnNumIn(void);	// zwraca iloœæ parametrów wejœciowych
+	virtual int ReturnNumOut(void);	// zwraca iloœæ parametrów wyjœciowych
+	virtual char* ReturnName(void);
+	void RepairPath(char* Src, char* Dest);	// dodaje po dwa // do œcie¿ki zakonczonej zerem
+	C_Variables** intab;				// tablica zawieraj¹ca adresy zmiennych wejœciowych
+	C_Variables** outtab;				// tablica zawieraj¹ca adresy zmiennych wejœciowych
+	virtual void Do(C_Error& err)=0;
+	char* fun_ver;					// command version
+	char* syntax;
+	char* description;	// opis dowolny
+	char name[MAXSIZE];		// nazwa
+protected:
+	size_t strlength;		// dlugosc stringa instrukcji
+	int numofoutparam;		// ilosc parametrówwejœciowych
+	int numofinparam;		// ilosc parametrówwejœciowych
+	DT* inputtype;	// typ parametrów wejœciowych w kolejnoœci
+	DT* outputtype;
+	void* extarnalApi;	// to do jakiœ zewnêtrznych klas i obiektów
+public:
+	virtual ~C_Commands(void);
+};

@@ -1,0 +1,5 @@
+LIBRARY	"writetiff"
+
+EXPORTS Introduce
+EXPORTS Do
+EXPORTS SetOutput

@@ -1,0 +1,5 @@
+LIBRARY	"Sauvola2"
+EXPORTS Do
+EXPORTS Introduce
+EXPORTS SetOutput 
+EXPORTS AssignGlobals

@@ -1,0 +1,4 @@
+// Microsoft Visual C++ generated Help ID include file.
+// Used by RadioGUI.rc
+//
+#define HIDC_LOAD                       0x806603e8    // IDD_RADIOGUI_DIALOG

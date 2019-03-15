@@ -1,0 +1,11 @@
+chdir('C:\\addip\radiograms');
+
+%  read image
+a = readtiff('iqi_test_bef.tif');
+handle = imshow('original',a,1);
+
+%  IQI detection
+iqi = iqidet(a,-2,5,3);
+handle1 = imshow('iqi',iqi,0);
+
+imwrite('iqi_res.tif',iqi,1);

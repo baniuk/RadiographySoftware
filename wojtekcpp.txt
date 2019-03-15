@@ -1,0 +1,447 @@
+void INDEX(C_Image *bin,C_Image *indek); indeksowany obrazek indek zwraca
+int  FUTURES(C_Image *image,C_Image *indek,C_Image *bin,double *tab,double minsiz,double maxsiz,double *param); oryginal, inedek, binarny, zwraca tab, min, max wady, tablica parametrów; zwraca liczbe wad klasyfikowanych
+void SAVETXT(double *tab,int number,CString path); number -liczba wad	
+void DESC(C_Image *image, double *tab, int number);	oryginal image,  liczba wad, modyfikuje wejsciowy obrazek i wyswietla
+
+
+void INDEX(C_Image *bin,C_Image *indek)
+{
+	unsigned int x_res, y_res;
+	x_res = bin->_rows;
+	y_res = bin->_cols;
+	indek->AllocateData(x_res,y_res);
+	indek->Zeros();
+
+	double sklejka[1000];
+	int licz=0;
+
+	for(int x=1;x<indek->_rows;x++)
+		for(int y=1;y<indek->_cols;y++)
+		{
+			double war1,war2,war3,war4,war5,war6,war7;
+			
+			bin->GetPixel(x,y,war1);
+			if(war1==1)
+			{
+				indek->GetPixel(x-1,y-1,war2);
+				indek->GetPixel(x-1,y,war3);
+				indek->GetPixel(x-1,y+1,war4);
+				indek->GetPixel(x,y-1,war5);
+				if(war2==0&&war3==0&&war4==0&&war5==0)
+				{
+					licz=licz+1;
+					indek->SetPixel(x,y,licz);
+					sklejka[licz]=licz+1;
+				}
+				else
+				{
+					war6=0;
+					war7=0;
+					
+					if(war2!=0)
+						war6=war2;
+					if(war3!=0)
+						war6=war3;
+					if(war4!=0)
+						war6=war4;
+					if(war5!=0)
+						war6=war5;
+					if(war2!=0&&war2!=war6)
+						war7=war2;
+					if(war3!=0&&war3!=war6)
+						war7=war3;
+					if(war4!=0&&war4!=war6)
+						war7=war4;
+					if(war5!=0&&war5!=war6)
+						war7=war5;
+					if(war7==0)
+						indek->SetPixel(x,y,war6);
+					else
+					{
+						indek->SetPixel(x,y,min(war6,war7));
+						sklejka[(int)max(war6,war7)]=min(war6,war7);
+					}
+
+				}
+			}
+		}
+
+		for(int i=1;i<licz;i++)
+		{
+			int war;
+			war=1+licz-i;
+			for(int x=0;x<indek->_rows;x++)
+				for(int y=0;y<indek->_cols;y++)
+				{
+					double war1;
+					indek->GetPixel(x,y,war1);
+					if(war1==war)
+					{
+						double pom=sklejka[war];
+						indek->SetPixel(x,y,pom);
+					}
+				}
+		}
+
+		double obecne=1;
+		double warmax=Maks(indek);
+		
+		for(int pom=1;pom<=warmax;pom++)
+		{
+			int licz1=0;
+			for(int x=0;x<indek->_rows;x++)
+				for(int y=0;y<indek->_cols;y++)
+				{
+					double val1;
+					indek->GetPixel(x,y,val1);
+					if(val1==pom)
+					{
+						indek->SetPixel(x,y,obecne);
+						licz1=licz1+1;
+					}
+				}
+			if(licz1>0)
+				obecne=obecne+1;
+
+		}
+	
+}
+
+
+
+
+
+int FUTURES(C_Image *image,C_Image *indek,C_Image *bin,double *tabpom,double minsiz,double maxsiz,double *param)
+{
+	int poz=13;
+	C_Image outln;
+	Outline(bin,&outln);
+	C_Image now;
+	now.AllocateData(outln._rows,outln._cols);
+	double *tab1=new double[100000];
+	double *tab2=new double[100000];
+	double val=0;	
+	double ilosc=0,sumax=0,sumay=0,sumaxx=0,sumayy=0;
+	double val1,val2,val3;
+	
+	int ind=0;
+	double obrx1;
+	double obrx2;
+
+
+	for(int i=0;i<outln._rows;i++)
+		for(int j=0;j<outln._cols;j++)
+		{
+			double pom;
+			indek->GetPixel(i,j,pom);
+			now.SetPixel(i,j,pom);
+		}
+
+	for(int i=0;i<indek->_rows;i++)
+		for(int j=0;j<indek->_cols;j++)
+		{
+			val=0;
+			ilosc=0;sumax=0;sumay=0;sumaxx=0;sumayy=0;
+			double il=0;
+			int num=0;
+			indek->GetPixel(i,j,val1);
+			if(val1>0)
+			{
+				double obw=0;
+				for(int ii=0;ii<indek->_rows;ii++)
+					for(int jj=0;jj<indek->_cols;jj++)
+					{
+						indek->GetPixel(ii,jj,val2);
+						
+						if(val2==val1)
+						{
+							
+							outln.GetPixel(ii,jj,val);
+							if(val==1)
+							{
+								obw=obw+1;
+								tab1[num]=ii;
+								tab1[num+50000]=jj;
+								num++;
+							}
+							
+							tabpom[ind*poz+1]=obw;
+							image->GetPixel(ii,jj,val3);
+							ilosc=ilosc+val3;
+							il++;
+							tabpom[ind*poz]=il;
+							sumax=sumax+val3*ii;
+							sumay=sumay+val3*jj;
+							sumaxx=sumaxx+ii;
+							sumayy=sumayy+jj;
+							indek->SetPixel(ii,jj,0);
+						}
+					}
+					double vec=0;
+					
+					if(obw>30&&il>minsiz)
+					{		
+						for(int z=0;z<obw;z++)
+		 				for(int zz=0;zz<obw;zz++)
+							{
+								double pom=sqrt((tab1[z]-tab1[zz])*(tab1[z]-tab1[zz])+(tab1[z+50000]-tab1[zz+50000])*(tab1[z+50000]-tab1[zz+50000]));
+								if(pom>vec)
+								{
+									vec=pom;
+									tabpom[ind*poz+6]=vec;
+									if(tab1[z+50000]>tab1[zz+50000])
+									{
+										tabpom[ind*poz+9]=atan(abs(tab1[z]-tab1[zz])/abs(tab1[z+50000]-tab1[zz+50000]));
+									}
+									else
+									{
+										tabpom[ind*poz+9]=3.14-atan(abs(tab1[zz]-tab1[z])/abs(tab1[zz+50000]-tab1[z+50000]));
+									}
+									tabpom[ind*poz+7]=tabpom[ind*poz]/(3.14*tabpom[ind*poz+6]);
+									obrx1=tab1[z]*cos(tabpom[ind*poz+9])-tab1[z+50000]*sin(tabpom[ind*poz+9]);
+									obrx2=tab1[zz]*cos(tabpom[ind*poz+9])-tab1[zz+50000]*sin(tabpom[ind*poz+9]);
+									if(abs(obrx1-obrx2)<1)
+									{
+										tabpom[ind*poz+8]=abs((tab1[z]*sin(tabpom[ind*poz+9])+tab1[z+50000]*cos(tabpom[ind*poz+9]))-(tab1[zz]*sin(tabpom[ind*poz+9])+tab1[zz+50000]*cos(tabpom[ind*poz+9])));
+									}
+								}
+						}
+					}
+					if(tabpom[ind*poz]>minsiz&&tabpom[ind*poz]<maxsiz)
+					{	
+						tabpom[ind*poz+4]=(sumax*1.0)/ilosc;
+						tabpom[ind*poz+5]=(sumay*1.0)/ilosc;
+						tabpom[ind*poz+2]=(sumaxx*1.0)/il;
+						tabpom[ind*poz+3]=(sumayy*1.0)/il;
+
+						ind++;
+					}
+			}
+		}
+		
+	
+	return ind;
+}
+
+
+
+
+
+void SAVETXT(double *tab,int number,CString path)
+{
+	int poz=13;
+	ofstream plk_wy1(path);
+	plk_wy1<<"cohx"<<" ";
+	plk_wy1<<"cohy"<<" ";
+	plk_wy1<<"radius1"<<" ";
+	plk_wy1<<"radius2"<<" ";
+	plk_wy1<<"alfa"<<" ";
+	plk_wy1<<"field"<<" ";
+	plk_wy1<<"perimeter"<<" ";
+
+	plk_wy1<<"\n";
+		for(int i=0;i<number;i++)
+		{
+			plk_wy1<<(tab[i*poz+2])<<" ";
+			plk_wy1<<(tab[i*poz+3])<<" ";
+			plk_wy1<<(tab[i*poz+6]/2)<<" ";
+			plk_wy1<<(tab[i*poz+7]*2)<<" ";
+			plk_wy1<<(tab[i*poz+8])<<" ";
+			plk_wy1<<(tab[i*poz+9])<<" ";
+			plk_wy1<<(tab[i*poz])<<" ";
+			plk_wy1<<(tab[i*poz+1])<<" ";
+			plk_wy1<<"\n";
+		}
+		
+		plk_wy1.close();
+}
+
+
+
+
+void DESC(C_Image *image, double *tab, int number)
+{
+	int poz=13;
+	double zero[9][9]={
+		{0,0,0,1,1,1,0,0,0},
+		{0,0,1,0,0,0,1,0,0},
+		{0,1,0,0,0,0,0,1,0},
+		{0,1,0,0,0,0,0,1,0},
+		{0,1,0,0,0,0,0,1,0},
+		{0,1,0,0,0,0,0,1,0},
+		{0,1,0,0,0,0,0,1,0},
+		{0,0,1,0,0,0,1,0,0},
+		{0,0,0,1,1,1,0,0,0}};
+	double one[9][9]={
+		{0,0,0,0,0,1,0,0,0},
+		{0,0,0,0,1,1,0,0,0},
+		{0,0,0,1,0,1,0,0,0},
+		{0,0,1,0,0,1,0,0,0},
+		{0,0,0,0,0,1,0,0,0},
+		{0,0,0,0,0,1,0,0,0},
+		{0,0,0,0,0,1,0,0,0},
+		{0,0,0,0,0,1,0,0,0},
+		{0,0,0,0,0,1,0,0,0}};
+	double two[9][9]={
+		{0,0,0,1,1,1,0,0,0},
+		{0,0,1,0,0,0,1,0,0},
+		{0,0,0,0,0,0,1,0,0},
+		{0,0,0,0,0,1,0,0,0},
+		{0,0,0,0,1,0,0,0,0},
+		{0,0,0,1,0,0,0,0,0},
+		{0,0,1,0,0,0,0,0,0},
+		{0,0,1,0,0,0,0,0,0},
+		{0,0,1,1,1,1,1,0,0}};
+	double three[9][9]={
+		{0,0,0,1,1,1,0,0,0},
+		{0,0,1,0,0,0,1,0,0},
+		{0,0,0,0,0,0,1,0,0},
+		{0,0,0,0,0,0,1,0,0},
+		{0,0,0,0,1,1,0,0,0},
+		{0,0,0,0,0,0,1,0,0},
+		{0,0,0,0,0,0,1,0,0},
+		{0,0,1,0,0,0,1,0,0},
+		{0,0,0,1,1,1,0,0,0}};
+	double four[9][9]={
+		{0,0,1,0,0,0,1,0,0},
+		{0,0,1,0,0,0,1,0,0},
+		{0,0,1,0,0,0,1,0,0},
+		{0,0,1,0,0,0,1,0,0},
+		{0,0,0,0,0,1,1,0,0},
+		{0,0,0,0,0,0,1,0,0},
+		{0,0,0,0,0,0,1,0,0},
+		{0,0,0,0,0,0,1,0,0},
+		{0,0,0,0,0,0,1,0,0}};
+	double five[9][9]={
+		{0,0,1,1,1,1,1,0,0},
+		{0,0,1,0,0,0,0,0,0},
+		{0,0,1,0,0,0,0,0,0},
+		{0,0,1,0,0,0,0,0,0},
+		{0,0,1,1,1,1,0,0,0},
+		{0,0,0,0,0,0,1,0,0},
+		{0,0,0,0,0,0,1,0,0},
+		{0,0,0,0,0,0,1,0,0},
+		{0,0,1,1,1,1,0,0,0}};
+	double six[9][9]={
+		{0,0,0,1,1,1,0,0,0},
+		{0,0,1,0,0,0,1,0,0},
+		{0,0,1,0,0,0,0,0,0},
+		{0,0,1,0,0,0,0,0,0},
+		{0,0,1,1,1,1,0,0,0},
+		{0,0,1,0,0,0,1,0,0},
+		{0,0,1,0,0,0,1,0,0},
+		{0,0,1,0,0,0,1,0,0},
+		{0,0,0,1,1,1,0,0,0}};
+	double seven[9][9]={
+		{0,0,1,1,1,1,1,0,0},
+		{0,0,0,0,0,0,1,0,0},
+		{0,0,0,0,0,1,0,0,0},
+		{0,0,0,0,1,0,0,0,0},
+		{0,0,0,1,0,0,0,0,0},
+		{0,0,0,1,0,0,0,0,0},
+		{0,0,0,1,0,0,0,0,0},
+		{0,0,0,1,0,0,0,0,0},
+		{0,0,0,1,0,0,0,0,0}};
+	double eight[9][9]={
+		{0,0,0,1,1,1,0,0,0},
+		{0,0,1,0,0,0,1,0,0},
+		{0,0,1,0,0,0,1,0,0},
+		{0,0,1,0,0,0,1,0,0},
+		{0,0,0,1,1,1,0,0,0},
+		{0,0,1,0,0,0,1,0,0},
+		{0,0,1,0,0,0,1,0,0},
+		{0,0,1,0,0,0,1,0,0},
+		{0,0,0,1,1,1,0,0,0}};
+	double nine[9][9]={
+		{0,0,0,1,1,1,0,0,0},
+		{0,0,1,0,0,0,1,0,0},
+		{0,0,1,0,0,0,1,0,0},
+		{0,0,1,0,0,0,1,0,0},
+		{0,0,0,1,1,1,1,0,0},
+		{0,0,0,0,0,0,1,0,0},
+		{0,0,0,0,0,0,1,0,0},
+		{0,0,1,0,0,0,1,0,0},
+		{0,0,0,1,1,1,0,0,0}};
+
+	
+	
+	
+
+	for(int i=0;i<number;i++)
+	{
+		double pozx=tab[i*poz+2];
+		double pozy=tab[i*poz+3];
+		std::stringstream ss;
+		std::string str;
+		ss << i;
+		ss >> str;
+		ss.clear();
+		int roz=str.length();
+		for(int k=0;k<roz;k++)
+				{
+					if(str[k]=='0')
+						for(int x=0;x<9;x++)
+							for(int y=0;y<9;y++)
+								if(zero[x][y]>0)
+									image->SetPixel(10+x+pozx,10+k*10+y+pozy,65000);
+					if(str[k]=='1')
+						for(int x=0;x<9;x++)
+							for(int y=0;y<9;y++)
+								if(one[x][y]>0)
+									image->SetPixel(10+x+pozx,10+k*10+y+pozy,65000);
+					if(str[k]=='2')
+						for(int x=0;x<9;x++)
+							for(int y=0;y<9;y++)
+								if(two[x][y]>0)
+									image->SetPixel(10+x+pozx,10+k*10+y+pozy,65000);
+					if(str[k]=='3')
+						for(int x=0;x<9;x++)
+							for(int y=0;y<9;y++)
+								if(three[x][y]>0)
+									image->SetPixel(10+x+pozx,10+k*10+y+pozy,65000);
+					if(str[k]=='4')
+						for(int x=0;x<9;x++)
+							for(int y=0;y<9;y++)
+								if(four[x][y]>0)
+									image->SetPixel(10+x+pozx,10+k*10+y+pozy,65000);
+					if(str[k]=='5')
+						for(int x=0;x<9;x++)
+							for(int y=0;y<9;y++)
+								if(five[x][y]>0)
+									image->SetPixel(10+x+pozx,10+k*10+y+pozy,65000);
+					if(str[k]=='6')
+						for(int x=0;x<9;x++)
+							for(int y=0;y<9;y++)
+								if(six[x][y]>0)
+									image->SetPixel(10+x+pozx,10+k*10+y+pozy,65000);
+					if(str[k]=='7')
+						for(int x=0;x<9;x++)
+							for(int y=0;y<9;y++)
+								if(seven[x][y]>0)
+									image->SetPixel(10+x+pozx,10+k*10+y+pozy,65000);
+					if(str[k]=='8')
+						for(int x=0;x<9;x++)
+							for(int y=0;y<9;y++)
+								if(eight[x][y]>0)
+									image->SetPixel(10+x+pozx,10+k*10+y+pozy,65000);
+					if(str[k]=='9')
+						for(int x=0;x<9;x++)
+							for(int y=0;y<9;y++)
+								if(nine[x][y]>0)
+									image->SetPixel(10+x+pozx,10+k*10+y+pozy,65000);
+				}
+		str.clear();
+		
+		
+	}
+	IplImage *img;
+	CvSize size;
+	size.height = image->_rows;
+	size.width = image->_cols;
+	img = cvCreateImage(size, IPL_DEPTH_16U, 1);
+	img->imageData = image->ReturnIPLBuffor();
+	imageshow("Image",img);
+	cvWaitKey();
+
+	
+}

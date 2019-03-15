@@ -1,0 +1,37 @@
+ADDIP ver. 1.6.2, build 299
+
+Function name: add			Syntax: NUMBER = add(NUMBER,NUMBER) Version: 1.0
+Function name: sin			Syntax: NUMBER = sin(NUMBER) Version: 1.0
+Function name: imread			Syntax: IMAGE = imread(STRING) Version: 1.0
+Function name: imshow			Syntax: STRING = imshow(STRING,IMAGE,NUMBER) Version: 1.0
+Function name: imclose			Syntax: imclose(STRING) Version: 1.0
+Function name: dilate			Syntax: IMAGE = dilate(IMAGE,NUMBER,NUMBER) Version: 1.0
+Function name: erode			Syntax: IMAGE = erode(IMAGE,NUMBER,NUMBER) Version: 1.0
+Function name: saveimagem			Syntax: saveimagem(STRING,IMAGE) Version: 1.0
+Function name: filter2d			Syntax: IMAGE = filter2d(IMAGE,NUMBER,NUMBER,NUMBER) Version: 1.0
+Function name: imadd			Syntax: IMAGE = imadd(IMAGE,IMAGE) Version: 1.0
+Function name: imsub			Syntax: IMAGE = imsub(IMAGE,IMAGE) Version: 1.0
+Function name: immulti			Syntax: IMAGE = immulti(IMAGE,IMAGE) Version: 1.0
+Function name: glshow			Syntax: STRING = glshow(STRING,IMAGE) Version: 1.0
+Function name: hist			Syntax: hist(IMAGE,NUMBER) Version: 1.0
+Function name: ath			Syntax: IMAGE = ath(IMAGE,NUMBER,NUMBER) Version: 1.0
+Function name: outline			Syntax: IMAGE = outline(IMAGE) Version: 1.0
+Function name: berode			Syntax: IMAGE = berode(IMAGE,NUMBER,NUMBER) Version: 1.0
+Function name: bdilate			Syntax: IMAGE = bdilate(IMAGE,NUMBER,NUMBER) Version: 1.0
+Function name: gth			Syntax: IMAGE = gth(IMAGE,NUMBER,NUMBER) Version: 1.0
+Function name: ith			Syntax: IMAGE = ith(IMAGE,NUMBER) Version: 1.0
+Function name: index			Syntax: index(IMAGE,IMAGE,NUMBER,NUMBER,STRING) Version: 1.0
+Function name: median			Syntax: IMAGE = median(IMAGE,NUMBER,NUMBER,NUMBER) Version: 1.0
+Function name: oth			Syntax: IMAGE = oth(IMAGE,NUMBER,NUMBER) Version: 1.1
+Function name: fftfilt			Syntax: IMAGE = fftfilt(IMAGE,NUMBER,NUMBER) Version: 1.0
+Function name: eth			Syntax: IMAGE = eth(IMAGE,NUMBER,NUMBER,NUMBER,NUMBER,NUMBER) Version: 1.0
+Function name: fillholes			Syntax: IMAGE = fillholes(IMAGE) Version: 1.0
+Function name: chdir			Syntax: chdir(STRING) Version: 1.0
+Function name: nth			Syntax: IMAGE = nth(IMAGE,NUMBER,NUMBER) Version: 1.0
+Function name: sth			Syntax: IMAGE = sth(IMAGE,NUMBER,NUMBER,NUMBER) Version: 1.0
+Function name: imwrite			Syntax: imwrite(STRING,IMAGE) Version: 1.0
+Function name: neural			Syntax: IMAGE = neural(IMAGE,STRING) Version: 1.0
+Function name: matrixread			Syntax: MATRIX = matrixread(STRING) Version: 1.0
+Function name: matrixwrite			Syntax: matrixwrite(MATRIX,STRING) Version: 1.0
+Function name: cutroi			Syntax: IMAGE = cutroi(IMAGE,NUMBER,NUMBER,NUMBER,NUMBER) Version: 1.0
+Function name: fastmedianqs			Syntax: IMAGE = fastmedianqs(IMAGE,NUMBER,NUMBER) Version: 1.0

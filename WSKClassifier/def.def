@@ -1,0 +1,6 @@
+LIBRARY	"WSKClassifier"
+EXPORTS Do
+EXPORTS Introduce
+EXPORTS SetOutput
+EXPORTS AssignGlobals
+

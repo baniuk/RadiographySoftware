@@ -1,0 +1,11 @@
+chdir('C:\\');
+iseeport(23);
+
+b = ISeeCommand('savedatasetas c:/set.txt');
+nazwa = ISeeGetFile('c:/set.txt');
+A = readtiff(nazwa);
+A = ISeeGetROI(A, 'c:/set.txt', 1);
+handle = imshow('okno', A, 1);
+
+writetiff(A, 'C:\\a.tif', 0);
+a = ISeeCommand('loadimage c:/a.tif');

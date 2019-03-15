@@ -1,0 +1,21 @@
+chdir('C:\\');
+% read the image
+original = imread('TestSample_2_3.tif');
+% and display it on the screen (without scaling)
+handle1 = imshow('original',original,0);
+% median filtering
+med = fastmedian(original,51,51);
+% substracting filtered image from original image
+sub = imsub(original,med);
+% iterative thresholding
+th = ith(sub,0.8);
+% removing small dots
+out_med = fastmedian(th,5,5);
+% recognizing flaws
+indexed_image = index(out_med);
+[tab,num] = calcfeatures(original,indexed_image,out_med,1,100000);
+savefeatures(tab,num,'wynik.txt');
+im_f = genindexedimage(original,tab,num);
+% displaying result
+handle2 = imshow('ith',out_med,1);
+handle3 = imshow('numbered',im_f,0);

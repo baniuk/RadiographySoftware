@@ -1,0 +1,5 @@
+LIBRARY	"CopyImage"
+EXPORTS Do
+EXPORTS Introduce
+EXPORTS SetOutput
+

@@ -1,0 +1,27 @@
+%read image
+chdir('G:\\Baza Wad\\Image 1');
+a = readtiff('14-32-53_836A.tif');
+%normalize%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+reg = dm('[0,100,0,100]');
+norm = imNormalize(a,65535,reg,9,2,0,15000);
+%norm = fastmedian(a,0,5,5);
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%detect ROI
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+[RegVect,MedRegVect,Roi] = detectROI(norm,90,10,50,10,30,0,'C:\\Program Files\\PSz\\ADDIP_FilmFree\\ADDIP\\DLL\\ApproximationParam.txt');
+xstart = getmatrixelement(MedRegVect,0,0);
+xend = getmatrixelement(MedRegVect,6,0);
+[rows,cols] = getimsize(norm);
+yend = add(cols,-1);
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+outRoi = cutroi(norm,0,yend,xstart,xend);
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+handle0 = imshow('loaded',a,1);
+handle1 = imshow('normalized',norm,1);
+handle2 = imshow('RoiLines',Roi,0);
+handle3 = imshow('Roi',outRoi,0);
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+writetiff(norm,'14-32-53_836A_normalized.tif',0);
+writetiff(Roi,'14-32-53_836A_ROI_lines.tif',0);
+writetiff(outRoi,'14-32-53_836A_RoiRegion.tif',0);

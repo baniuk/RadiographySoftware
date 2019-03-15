@@ -1,0 +1,28 @@
+chdir('c:\\Test Welds - Technic Control\\');
+im = imread('enhancedCBI_25mm_weld_plate_160kV_2_5mA_390secs_700SFD_STD-plate_16-07-2007_14-14-11.tif');
+
+imcut = cutroi(im,2200,6200,201,2799);
+
+handle1 = imshow('imcut',imcut,1);
+
+[RegVect,MedRegVect,Roi] = detectROI(imcut,90,10,50,10,10,0,'C:\\Program Files\\PSz\\ADDIP\\ADDIP\\DLL\\ApproximationParam.txt');
+
+matrixwrite(MedRegVect,'ROILines_2.txt');
+
+handle2 = imshow('Roi',Roi,0);
+
+imwrite('c:\\Test Welds - Technic Control\\ROI_3.tif',Roi,0);
+
+% Parameters read from ROILines_2.txt (from 7 parameters cut betweem 1 and 7)  439-1881
+im_temp1= cutroi(imcut,1,1400,439,1881);
+im_temp2 = cutroi(imcut,1350,2700,439,1881);
+im_temp3 = cutroi(imcut,2650,4000,439,1881);
+
+%handle3 = imshow('im_temp1',im_temp1,1);
+%handle4 = imshow('im_temp2',im_temp2,1);
+%handle5 = imshow('im_temp3',im_temp3,1);
+
+
+imwrite('c:\\Test Welds - Technic Control\\TestIm3.1.tif',im_temp1,0);
+imwrite('c:\\Test Welds - Technic Control\\TestIm3.2.tif',im_temp2,0);
+imwrite('c:\\Test Welds - Technic Control\\TestIm3.3.tif',im_temp3,0);

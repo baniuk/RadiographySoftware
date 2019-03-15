@@ -1,0 +1,520 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Template|Win32">
+      <Configuration>Template</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Template|x64">
+      <Configuration>Template</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{003E95CF-CCF0-458B-A81E-86D959B714AC}</ProjectGuid>
+    <RootNamespace>RadioGUI</RootNamespace>
+    <Keyword>MFCProj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>Static</UseOfMfc>
+    <CharacterSet>NotSet</CharacterSet>
+    <WholeProgramOptimization>false</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <UseOfAtl>false</UseOfAtl>
+    <CharacterSet>NotSet</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Template|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>Static</UseOfMfc>
+    <CharacterSet>NotSet</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <UseOfAtl>false</UseOfAtl>
+    <CharacterSet>NotSet</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Template|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(Platform)\$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(SolutionDir)$(Platform)\$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(Platform)\$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|x64'">false</LinkIncremental>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|x64'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|x64'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|x64'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Template|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Template|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Template|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Template|x64'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Template|x64'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Template|x64'" />
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <PreBuildEvent>
+      <Command>"$(ProjectDir)incbuild" "$(ProjectDir)ver.txt"
+"$(ProjectDir)xcopy" "$(SolutionDir)Interpreter\C_Error.h" "$(SolutionDir)SDK\" /Y /Q
+"$(ProjectDir)xcopy" "$(SolutionDir)Interpreter\C_Image_Container.h" "$(SolutionDir)SDK\" /Y /Q
+"$(ProjectDir)xcopy" "$(SolutionDir)Interpreter\C_Matrix_Container.h" "$(SolutionDir)SDK\" /Y /Q
+"$(ProjectDir)xcopy" "$(SolutionDir)Interpreter\C_Variables.h" "$(SolutionDir)SDK\" /Y /Q
+"$(ProjectDir)xcopy" "$(SolutionDir)Interpreter\C_Variables_Image.h" "$(SolutionDir)SDK\" /Y /Q
+"$(ProjectDir)xcopy" "$(SolutionDir)Interpreter\C_Variables_Matrix.h" "$(SolutionDir)SDK\" /Y /Q
+"$(ProjectDir)xcopy" "$(SolutionDir)Interpreter\C_Variables_Number.h" "$(SolutionDir)SDK\" /Y /Q
+"$(ProjectDir)xcopy" "$(SolutionDir)Interpreter\C_Variables_String.h" "$(SolutionDir)SDK\" /Y /Q
+"$(ProjectDir)xcopy" "$(SolutionDir)Interpreter\Datatypes.h" "$(SolutionDir)SDK\" /Y /Q
+"$(ProjectDir)xcopy" "$(SolutionDir)Interpreter\C_MultiProcesor.h" "$(SolutionDir)SDK\" /Y /Q
+
+"$(ProjectDir)xcopy" "$(SolutionDir)Interpreter\C_Error.cpp" "$(SolutionDir)ADDIP_clases\" /Y /Q
+"$(ProjectDir)xcopy" "$(SolutionDir)Interpreter\C_Image_Container.cpp" "$(SolutionDir)ADDIP_clases\" /Y /Q
+"$(ProjectDir)xcopy" "$(SolutionDir)Interpreter\C_Matrix_Container.cpp" "$(SolutionDir)ADDIP_clases\" /Y /Q
+"$(ProjectDir)xcopy" "$(SolutionDir)Interpreter\C_Variables.cpp" "$(SolutionDir)ADDIP_clases\" /Y /Q
+"$(ProjectDir)xcopy" "$(SolutionDir)Interpreter\C_Variables_Image.cpp" "$(SolutionDir)ADDIP_clases\" /Y /Q
+"$(ProjectDir)xcopy" "$(SolutionDir)Interpreter\C_Variables_Matrix.cpp" "$(SolutionDir)ADDIP_clases\" /Y /Q
+"$(ProjectDir)xcopy" "$(SolutionDir)Interpreter\C_Variables_Number.cpp" "$(SolutionDir)ADDIP_clases\" /Y /Q
+"$(ProjectDir)xcopy" "$(SolutionDir)Interpreter\C_Variables_String.cpp" "$(SolutionDir)ADDIP_clases\" /Y /Q
+"$(ProjectDir)xcopy" "$(SolutionDir)Interpreter\Datatypes.cpp" "$(SolutionDir)ADDIP_clases\" /Y /Q
+"$(ProjectDir)xcopy" "$(SolutionDir)Interpreter\C_MultiProcesor.cpp" "$(SolutionDir)SDK\" /Y /Q
+</Command>
+    </PreBuildEvent>
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>false</ValidateAllParameters>
+    </Midl>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>$(SolutionDir)GnuWin32\include;$(SolutionDir)fftw;$(SolutionDir)SDK;$(SolutionDir)OpenCV\cv\include;$(SolutionDir)OpenCV\cxcore\include;$(SolutionDir)OpenCV\otherlibs\highgui;$(SolutionDir)gl;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WINDOWS_COMPILATION;NO_REGISTRY;DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <StructMemberAlignment>Default</StructMemberAlignment>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <PreLinkEvent>
+      <Command>
+      </Command>
+    </PreLinkEvent>
+    <Link>
+      <AdditionalDependencies>cv.lib;highgui.lib;cxcore.lib;libtiff.lib;glaux.lib;libfftw3-3.lib;glu32.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)ADDIP_D.exe</OutputFile>
+      <AdditionalLibraryDirectories>$(SolutionDir)GnuWin32\lib;$(SolutionDir)fftw;$(SolutionDir)OpenCV\lib;$(SolutionDir)gl;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <PostBuildEvent>
+      <Command>"$(SolutionDir)xcopy" "$(OutDir)ADDIP_D.exe" "$(SolutionDir)install\ADDIP\" /Y /Q</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <TargetEnvironment>X64</TargetEnvironment>
+    </Midl>
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>C:\Program Files (x86)\GnuWin32\include;C:\Documents and Settings\PB\My Documents\MyProjects\RadiographySoftware\fftw;C:\Program Files (x86)\OpenCV\cv\include;C:\Program Files (x86)\OpenCV\cxcore\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WINDOWS_COMPILATION;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>cv.lib;highgui.lib;cxcore.lib;libtiff.lib;glaux.lib;libfftw3-3.lib;glu32.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Program Files (x86)\GnuWin32\lib;C:\Documents and Settings\PB\My Documents\MyProjects\RadiographySoftware\fftw;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <TargetMachine>MachineX64</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <PreBuildEvent>
+      <Command>"$(ProjectDir)incbuild" "$(ProjectDir)ver.txt"
+"$(ProjectDir)xcopy" "$(SolutionDir)Interpreter\C_Error.h" "$(SolutionDir)SDK\" /Y /Q
+"$(ProjectDir)xcopy" "$(SolutionDir)Interpreter\C_Image_Container.h" "$(SolutionDir)SDK\" /Y /Q
+"$(ProjectDir)xcopy" "$(SolutionDir)Interpreter\C_Matrix_Container.h" "$(SolutionDir)SDK\" /Y /Q
+"$(ProjectDir)xcopy" "$(SolutionDir)Interpreter\C_Variables.h" "$(SolutionDir)SDK\" /Y /Q
+"$(ProjectDir)xcopy" "$(SolutionDir)Interpreter\C_Variables_Image.h" "$(SolutionDir)SDK\" /Y /Q
+"$(ProjectDir)xcopy" "$(SolutionDir)Interpreter\C_Variables_Matrix.h" "$(SolutionDir)SDK\" /Y /Q
+"$(ProjectDir)xcopy" "$(SolutionDir)Interpreter\C_Variables_Number.h" "$(SolutionDir)SDK\" /Y /Q
+"$(ProjectDir)xcopy" "$(SolutionDir)Interpreter\C_Variables_String.h" "$(SolutionDir)SDK\" /Y /Q
+"$(ProjectDir)xcopy" "$(SolutionDir)Interpreter\Datatypes.h" "$(SolutionDir)SDK\" /Y /Q
+
+"$(ProjectDir)xcopy" "$(SolutionDir)Interpreter\C_Error.cpp" "$(SolutionDir)ADDIP_clases\" /Y /Q
+"$(ProjectDir)xcopy" "$(SolutionDir)Interpreter\C_Image_Container.cpp" "$(SolutionDir)ADDIP_clases\" /Y /Q
+"$(ProjectDir)xcopy" "$(SolutionDir)Interpreter\C_Matrix_Container.cpp" "$(SolutionDir)ADDIP_clases\" /Y /Q
+"$(ProjectDir)xcopy" "$(SolutionDir)Interpreter\C_Variables.cpp" "$(SolutionDir)ADDIP_clases\" /Y /Q
+"$(ProjectDir)xcopy" "$(SolutionDir)Interpreter\C_Variables_Image.cpp" "$(SolutionDir)ADDIP_clases\" /Y /Q
+"$(ProjectDir)xcopy" "$(SolutionDir)Interpreter\C_Variables_Matrix.cpp" "$(SolutionDir)ADDIP_clases\" /Y /Q
+"$(ProjectDir)xcopy" "$(SolutionDir)Interpreter\C_Variables_Number.cpp" "$(SolutionDir)ADDIP_clases\" /Y /Q
+"$(ProjectDir)xcopy" "$(SolutionDir)Interpreter\C_Variables_String.cpp" "$(SolutionDir)ADDIP_clases\" /Y /Q
+"$(ProjectDir)xcopy" "$(SolutionDir)Interpreter\Datatypes.cpp" "$(SolutionDir)ADDIP_clases\" /Y /Q
+</Command>
+    </PreBuildEvent>
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <ValidateAllParameters>false</ValidateAllParameters>
+    </Midl>
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <IntrinsicFunctions>false</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <AdditionalIncludeDirectories>$(SolutionDir)GnuWin32\include;$(SolutionDir)fftw;$(SolutionDir)SDK;$(SolutionDir)OpenCV\cv\include;$(SolutionDir)OpenCV\cxcore\include;$(SolutionDir)OpenCV\otherlibs\highgui;$(SolutionDir)gl;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WINDOWS_COMPILATION;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <StringPooling>false</StringPooling>
+      <MinimalRebuild>false</MinimalRebuild>
+      <BasicRuntimeChecks>Default</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <EnableEnhancedInstructionSet>NotSet</EnableEnhancedInstructionSet>
+      <FloatingPointModel>Precise</FloatingPointModel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <PreLinkEvent>
+      <Command>
+      </Command>
+    </PreLinkEvent>
+    <ProjectReference>
+      <LinkLibraryDependencies>true</LinkLibraryDependencies>
+      <UseLibraryDependencyInputs>false</UseLibraryDependencyInputs>
+    </ProjectReference>
+    <Link>
+      <AdditionalDependencies>cv.lib;highgui.lib;cxcore.lib;libtiff.lib;glaux.lib;libfftw3-3.lib;glu32.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <OutputFile>$(OutDir)ADDIP.exe</OutputFile>
+      <AdditionalLibraryDirectories>$(SolutionDir)GnuWin32\lib;$(SolutionDir)fftw;$(SolutionDir)OpenCV\lib;$(SolutionDir)gl;$(SolutionDir);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <IgnoreAllDefaultLibraries>false</IgnoreAllDefaultLibraries>
+      <IgnoreSpecificDefaultLibraries>%(IgnoreSpecificDefaultLibraries)</IgnoreSpecificDefaultLibraries>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <PostBuildEvent>
+      <Command>"$(SolutionDir)xcopy" "$(OutDir)ADDIP.exe" "$(SolutionDir)install\ADDIP\" /Y /Q</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <TargetEnvironment>X64</TargetEnvironment>
+    </Midl>
+    <ClCompile>
+      <Optimization>Full</Optimization>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <AdditionalIncludeDirectories>C:\Program Files (x86)\GnuWin32\include;C:\Documents and Settings\PB\My Documents\MyProjects\RadiographySoftware\fftw;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WINDOWS_COMPILATION;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0409</Culture>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <AdditionalDependencies>cv.lib;highgui.lib;cxcore.lib;libtiff.lib;glaux.lib;libfftw3-3.lib;glu32.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Program Files (x86)\GnuWin32\lib;C:\Documents and Settings\PB\My Documents\MyProjects\RadiographySoftware\fftw;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <TargetMachine>MachineX64</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="_MyEditDialog.cpp" />
+    <ClCompile Include="_OpenGL.cpp" />
+    <ClCompile Include="_OpenGL_Hist.cpp" />
+    <ClCompile Include="C_CommandStack.cpp" />
+    <ClCompile Include="C_DLL_Name_Holder.cpp" />
+    <ClCompile Include="C_DLL_Operation.cpp" />
+    <ClCompile Include="MyListBox.cpp" />
+    <ClCompile Include="RadioGUI.cpp" />
+    <ClCompile Include="RadioGUIDlg.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\Interpreter\C_Command_Add.cpp" />
+    <ClCompile Include="..\Interpreter\C_Command_Annclasifier.cpp" />
+    <ClCompile Include="..\Interpreter\C_Command_Bdilate.cpp" />
+    <ClCompile Include="..\Interpreter\C_Command_Berode.cpp" />
+    <ClCompile Include="..\Interpreter\C_Command_Chdir.cpp" />
+    <ClCompile Include="..\Interpreter\C_Command_Cutroi.cpp" />
+    <ClCompile Include="..\Interpreter\C_Command_Dilate.cpp" />
+    <ClCompile Include="..\Interpreter\C_Command_DLL.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+    </ClCompile>
+    <ClCompile Include="..\Interpreter\C_Command_Dm.cpp" />
+    <ClCompile Include="..\Interpreter\C_Command_Erode.cpp" />
+    <ClCompile Include="..\Interpreter\C_Command_Eth.cpp" />
+    <ClCompile Include="..\Interpreter\C_Command_Exit.cpp" />
+    <ClCompile Include="..\Interpreter\C_Command_FastMedianqs.cpp" />
+    <ClCompile Include="..\Interpreter\C_Command_Features.cpp" />
+    <ClCompile Include="..\Interpreter\C_Command_Fftfilt.cpp" />
+    <ClCompile Include="..\Interpreter\C_Command_Fillholes.cpp" />
+    <ClCompile Include="..\Interpreter\C_Command_Filter2d.cpp" />
+    <ClCompile Include="..\Interpreter\C_Command_GLshow.cpp" />
+    <ClCompile Include="..\Interpreter\C_Command_Gth.cpp" />
+    <ClCompile Include="..\Interpreter\C_Command_Hist.cpp" />
+    <ClCompile Include="..\Interpreter\C_Command_Imadd.cpp" />
+    <ClCompile Include="..\Interpreter\C_Command_Imclose.cpp" />
+    <ClCompile Include="..\Interpreter\C_Command_Immulti.cpp" />
+    <ClCompile Include="..\Interpreter\C_Command_Imread.cpp" />
+    <ClCompile Include="..\Interpreter\C_Command_Imshow.cpp" />
+    <ClCompile Include="..\Interpreter\C_Command_Imsub.cpp" />
+    <ClCompile Include="..\Interpreter\C_Command_Imwrite.cpp" />
+    <ClCompile Include="..\Interpreter\C_Command_Ith.cpp" />
+    <ClCompile Include="..\Interpreter\C_Command_Load.cpp" />
+    <ClCompile Include="..\Interpreter\C_Command_Matrixread.cpp" />
+    <ClCompile Include="..\Interpreter\C_Command_Matrixwrite.cpp" />
+    <ClCompile Include="..\Interpreter\C_Command_Median.cpp" />
+    <ClCompile Include="..\Interpreter\C_Command_Neural.cpp" />
+    <ClCompile Include="..\Interpreter\C_Command_Normalize.cpp" />
+    <ClCompile Include="..\Interpreter\C_Command_Nth.cpp" />
+    <ClCompile Include="..\Interpreter\C_Command_Oth.cpp" />
+    <ClCompile Include="..\Interpreter\C_Command_Outline.cpp" />
+    <ClCompile Include="..\Interpreter\C_Command_Particals.cpp" />
+    <ClCompile Include="..\Interpreter\C_Command_Prewitt.cpp" />
+    <ClCompile Include="..\Interpreter\C_Command_Print.cpp" />
+    <ClCompile Include="..\Interpreter\C_Command_Roberts.cpp" />
+    <ClCompile Include="..\Interpreter\C_Command_Savefeatures.cpp" />
+    <ClCompile Include="..\Interpreter\C_Command_SaveImageM.cpp" />
+    <ClCompile Include="..\Interpreter\C_Command_Showfeatures.cpp" />
+    <ClCompile Include="..\Interpreter\C_Command_Sin.cpp" />
+    <ClCompile Include="..\Interpreter\C_Command_Sobel.cpp" />
+    <ClCompile Include="..\Interpreter\C_Command_Sth.cpp" />
+    <ClCompile Include="..\Interpreter\C_Command_Th.cpp" />
+    <ClCompile Include="..\Interpreter\C_Command_Thread.cpp" />
+    <ClCompile Include="..\Interpreter\C_Commands.cpp" />
+    <ClCompile Include="..\Interpreter\C_Commans_ISeePort.cpp" />
+    <ClCompile Include="..\Interpreter\C_Error.cpp" />
+    <ClCompile Include="..\Interpreter\C_Image_Container.cpp" />
+    <ClCompile Include="..\Interpreter\C_InterpBase.cpp" />
+    <ClCompile Include="..\Interpreter\C_Line.cpp" />
+    <ClCompile Include="..\Interpreter\C_Matrix_Container.cpp" />
+    <ClCompile Include="..\Interpreter\C_MultiProcesor.cpp" />
+    <ClCompile Include="..\Interpreter\C_Variables.cpp" />
+    <ClCompile Include="..\Interpreter\C_Variables_Image.cpp" />
+    <ClCompile Include="..\Interpreter\C_Variables_Matrix.cpp" />
+    <ClCompile Include="..\Interpreter\C_Variables_Number.cpp" />
+    <ClCompile Include="..\Interpreter\C_Variables_String.cpp" />
+    <ClCompile Include="..\Interpreter\DataTypes.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="_MyEditDialog.h" />
+    <ClInclude Include="_OpenGL.h" />
+    <ClInclude Include="_OpenGL_Hist.h" />
+    <ClInclude Include="C_CommandStack.h" />
+    <ClInclude Include="C_DLL_Name_Holder.h" />
+    <ClInclude Include="C_DLL_Operation.h" />
+    <ClInclude Include="MyListBox.h" />
+    <ClInclude Include="RadioGUI.h" />
+    <ClInclude Include="RadioGUIDlg.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="..\Interpreter\C_Command_Add.h" />
+    <ClInclude Include="..\Interpreter\C_Command_Annclasifier.h" />
+    <ClInclude Include="..\Interpreter\C_Command_Bdilate.h" />
+    <ClInclude Include="..\Interpreter\C_Command_Berode.h" />
+    <ClInclude Include="..\Interpreter\C_Command_Chdir.h" />
+    <ClInclude Include="..\Interpreter\C_Command_Cutroi.h" />
+    <ClInclude Include="..\Interpreter\C_Command_Dilate.h" />
+    <ClInclude Include="..\Interpreter\C_Command_DLL.h" />
+    <ClInclude Include="..\Interpreter\C_Command_Dm.h" />
+    <ClInclude Include="..\Interpreter\C_Command_Erode.h" />
+    <ClInclude Include="..\Interpreter\C_Command_Eth.h" />
+    <ClInclude Include="..\Interpreter\C_Command_Exit.h" />
+    <ClInclude Include="..\Interpreter\C_Command_FastMedianqs.h" />
+    <ClInclude Include="..\Interpreter\C_Command_Features.h" />
+    <ClInclude Include="..\Interpreter\C_Command_Fftfilt.h" />
+    <ClInclude Include="..\Interpreter\C_Command_Fillholes.h" />
+    <ClInclude Include="..\Interpreter\C_Command_Filter2d.h" />
+    <ClInclude Include="..\Interpreter\C_Command_GLshow.h" />
+    <ClInclude Include="..\Interpreter\C_Command_Gth.h" />
+    <ClInclude Include="..\Interpreter\C_Command_Hist.h" />
+    <ClInclude Include="..\Interpreter\C_Command_Imadd.h" />
+    <ClInclude Include="..\Interpreter\C_Command_Imclose.h" />
+    <ClInclude Include="..\Interpreter\C_Command_Immulti.h" />
+    <ClInclude Include="..\Interpreter\C_Command_Imread.h" />
+    <ClInclude Include="..\Interpreter\C_Command_Imshow.h" />
+    <ClInclude Include="..\Interpreter\C_Command_Imsub.h" />
+    <ClInclude Include="..\Interpreter\C_Command_Imwrite.h" />
+    <ClInclude Include="..\Interpreter\C_Command_Ith.h" />
+    <ClInclude Include="..\Interpreter\C_Command_Load.h" />
+    <ClInclude Include="..\Interpreter\C_Command_Matrixread.h" />
+    <ClInclude Include="..\Interpreter\C_Command_Matrixwrite.h" />
+    <ClInclude Include="..\Interpreter\C_Command_Median.h" />
+    <ClInclude Include="..\Interpreter\C_Command_Neural.h" />
+    <ClInclude Include="..\Interpreter\C_Command_Normalize.h" />
+    <ClInclude Include="..\Interpreter\C_Command_Nth.h" />
+    <ClInclude Include="..\Interpreter\C_Command_Oth.h" />
+    <ClInclude Include="..\Interpreter\C_Command_Outline.h" />
+    <ClInclude Include="..\Interpreter\C_Command_Particals.h" />
+    <ClInclude Include="..\Interpreter\C_Command_Prewitt.h" />
+    <ClInclude Include="..\Interpreter\C_Command_Print.h" />
+    <ClInclude Include="..\Interpreter\C_Command_Roberts.h" />
+    <ClInclude Include="..\Interpreter\C_Command_Savefeatures.h" />
+    <ClInclude Include="..\Interpreter\C_Command_SaveImageM.h" />
+    <ClInclude Include="..\Interpreter\C_Command_Showfeatures.h" />
+    <ClInclude Include="..\Interpreter\C_Command_Sin.h" />
+    <ClInclude Include="..\Interpreter\C_Command_Sobel.h" />
+    <ClInclude Include="..\Interpreter\C_Command_Sth.h" />
+    <ClInclude Include="..\Interpreter\C_Command_Th.h" />
+    <ClInclude Include="..\Interpreter\C_Command_Thread.h" />
+    <ClInclude Include="..\Interpreter\C_Commands.h" />
+    <ClInclude Include="..\Interpreter\C_Commans_ISeePort.h" />
+    <ClInclude Include="..\Interpreter\C_Error.h" />
+    <ClInclude Include="..\Interpreter\C_Image_Container.h" />
+    <ClInclude Include="..\Interpreter\C_InterpBase.h" />
+    <ClInclude Include="..\Interpreter\C_Line.h" />
+    <ClInclude Include="..\Interpreter\C_Matrix_Container.h" />
+    <ClInclude Include="..\Interpreter\C_MultiProcesor.h" />
+    <ClInclude Include="..\Interpreter\C_Variables.h" />
+    <ClInclude Include="..\Interpreter\C_Variables_Image.h" />
+    <ClInclude Include="..\Interpreter\C_Variables_Matrix.h" />
+    <ClInclude Include="..\Interpreter\C_Variables_Number.h" />
+    <ClInclude Include="..\Interpreter\C_Variables_String.h" />
+    <ClInclude Include="..\Interpreter\DataTypes.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="resource.hm" />
+    <None Include="res\icon1.ico" />
+    <None Include="res\icon2.ico" />
+    <None Include="res\RadioGUI.ico" />
+    <None Include="res\RadioGUI.rc2" />
+    <None Include="res\toolbar1.bmp" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="ClassDiagram2.cd" />
+    <None Include="ReadMefile.txt" />
+    <None Include="ReadMeInstall.txt" />
+    <None Include="..\Interpreter\TODO.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="RadioGUI.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="RadioGUI.rc" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

@@ -1,0 +1,51 @@
+#include "Cpp_Lib.h"
+
+// This is an empty project to build DLL library of interface version 2.0
+
+
+void Introduce(FUNC_DEF* definition)
+{
+	strcpy_s(definition->name,MAX_NAME,"copyimage");	// nazwa w ADDIP
+	strcpy_s(definition->version,MAX_VER,"1.0");	// wersja (nie ma wiêkszego znaczenia)
+	strcpy_s(definition->syntax,MAX_SYNT,"[IMAGE, IMAGE] = copyimage(IMAGE,IMAGE)"); // SYNTAX (nie ma wiêkszego znaczenia)
+	definition->numofout = 2;	// ilosc parametrów wyœciowych
+	definition->numofin = 2;	// ilosc parametrów wejœciowych
+	definition->typesofin[0] = IMAGE; definition->typesofin[1] = IMAGE;	// typy wejœcia
+	definition->typesofout[0] = IMAGE; definition->typesofout[1] = IMAGE; // typy wyjœcia
+	definition->interface_version = 2;	// wersja interface
+	strcpy_s(definition->description,MAX_DESC,"TEST");	// cokolwiek
+	definition->ADDIP_version = 2.0; 
+
+}
+
+void SetOutput(C_Variables** outtab, C_Variables** intab)
+{
+	// variable output has size of numofout (set in Introduce function)
+	
+}
+
+void Do(C_Error& err, C_Variables** intab,int nargin, C_Variables** outtab, int nargout)
+{
+/*	Rozmiar intab i outtab s¹ takie jak podano w Introduce, tak samo typy obiektów przekazywanych w tych zmiennych.*/
+	
+	C_Image_Container *image1;
+	C_Image_Container *image2;
+	C_Image_Container o1;
+	C_Image_Container o2;
+//	C_Image_Container result;
+	
+	image1 = (C_Image_Container*)intab[0]->data;	// tu dokonujemy konwersji bo w intab wszystko jest trzymane jako void*
+	image2 = (C_Image_Container*)intab[1]->data;	// konwersji dokonujemy zgodnie z typami poszczególnychy parametrów wejœciowych, tak jak zdefiniiowaliœmy to na pocz¹tku
+	
+	image1->CloneObject(&o1);
+	image2->CloneObject(&o2);
+	
+	o1.Normalize(0,65535);
+	o2.Normalize(0,65535);
+
+
+	
+	outtab[0]->AssignValue((void*)&o1,err);		// na koñcu przypisujemy wyniki do poszczególnych wyjœc
+	outtab[1]->AssignValue((void*)&o2,err);
+
+}

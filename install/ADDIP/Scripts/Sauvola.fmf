@@ -1,0 +1,10 @@
+threads(2);
+
+%chdir('C:\\');
+org = readtiff('14-35-49_257A_flaw1A_normal.tif');
+%ind = readtiff('14-35-49_257A_flaw1A_flaws_ath_indexed1.tif');
+%bw = readtiff('14-35-49_257A_flaw1A_ath.tif');
+
+A = Sauvola(org, 41, 0.2);
+handle1 = imshow('Orygina³', org, 1);
+handle = imshow('Przerobiony', A, 1);

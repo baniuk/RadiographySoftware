@@ -1,0 +1,10 @@
+chdir('C:\\addip\radiograms');
+% read image
+original = imread('TestSample_1_1.tif');
+% and display it on the screen (without scaling)
+handle1 = imshow('original',original,0);
+% then save it for futher use in matlab
+saveimagem('TestSample_1_1_matlab.bin',original);
+% use procedure addipimport(filename) to import saved image to matlab
+% and saving as tiff
+imwrite('SavedImage.tiff',original,1);

@@ -1,0 +1,17 @@
+chdir('C:\\');
+% read image
+a = imread('FilmFree_A_Szczecin_NA_NA_NA_TC_Spoiny_27-09-2007_14-40-04_171A.tif');
+% show image
+handle = imshow('original',a,1);
+% crop withe area 
+b = cropImage(a);
+% show after crop
+handle1 = imshow('croped',b,1);
+% detect ROI according to X dimension ( length of weld image )
+c = lengthArea(b,0,0,16,730,50);
+% show result
+handle2 = imshow('RoiX',c,1);
+
+
+
+

@@ -1,0 +1,30 @@
+chdir('C:\\addip\radiograms');
+
+oryg = imread('TestSample_2_3.tif');
+a = fastmedian(oryg,1,5,5);
+handle = imshow('original',a,0);
+
+% sobel vertical
+out_sv = sobel(a,1);
+% sobel horizontal
+out_sh = sobel(a,0);
+
+% roberts vertical
+out_rv = roberts(a,1);
+% roberts horizontal
+out_rh = roberts(a,0);
+
+% prewitt vertical
+out_pv = prewitt(a,1);
+% prewitt horizontal
+out_ph = prewitt(a,0);
+
+
+handle1 = imshow('sobel vertical',out_sv,0);
+handle2 = imshow('sobel horizontal',out_sh,0);
+
+handle3 = imshow('roberts vertical',out_rv,0);
+handle4 = imshow('roberts horizontal',out_rh,0);
+
+handle5 = imshow('prewitt vertical',out_pv,0);
+handle6 = imshow('prewitt horizontal',out_ph,0);

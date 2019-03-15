@@ -1,0 +1,13 @@
+or1 = imread('F:\\Sample.tif');
+mm = dm('[0,0,0,0]');
+%or = mult_add(or1,10,33);
+obraz= norm_radio(or1,65535,1000,2,8,mm);
+[max,min,sred,med]=statistic(obraz,mm);
+imwrite('F:\\cos1.tif',obraz,1);
+drukuj = imshow('original1', obraz,0);
+savestat('F:\\stat1.txt',max,min,sred,med);
+
+
+
+
+

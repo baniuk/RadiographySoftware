@@ -1,0 +1,7 @@
+chdir('C:\\addip\\radiograms');
+
+% read image
+original = readtiff('TestSample_1_1.tif');
+
+% and display it on the screen (with scaling)
+handle1 = imshow('original',original,0);

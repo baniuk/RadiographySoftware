@@ -1,0 +1,176 @@
+//#ifndef _EXTERNALDLL
+#include "StdAfx.h"
+#include "C_Matrix_Container.h"
+//#else
+//	#include "C_Matrix_Container.h"
+//#endif
+
+C_Matrix_Container::C_Matrix_Container(void)
+{
+	data = NULL;
+}
+
+C_Matrix_Container::~C_Matrix_Container(void)
+{
+	if(data) {delete[] (double*)data;     data=NULL;}
+}
+void C_Matrix_Container::AllocateData(unsigned int rows, unsigned int cols)
+{
+	if(data) {delete[] (double*)data;     data=NULL;}
+	data = new double[rows*cols];
+	_rows = rows;
+	_cols = cols;
+}
+void C_Matrix_Container::FreeData(void)
+{
+	if(data) {delete[] (double*)data;     data=NULL;}
+}
+void C_Matrix_Container::CloneObject(C_Matrix_Container* dest)
+{
+	dest->_cols = _cols;
+	dest->_rows = _rows;
+	dest->FreeData();
+	dest->AllocateData(dest->_rows,dest->_cols);
+	memcpy(dest->data,data,sizeof(double)*dest->_rows*dest->_cols);
+}
+void C_Matrix_Container::Zeros(void)
+{
+	unsigned long a;
+	for(a=0;a<GetNumofElements();a++)
+		data[a] = 0.0;
+}
+inline unsigned long C_Matrix_Container::GetNumofElements(void)
+{
+	return _rows*_cols;
+}
+void C_Matrix_Container::GetPixel(unsigned long row, unsigned long col,double &pixel)
+{
+#ifndef _EXTERNALDLL
+	ASSERT(row<_rows);
+	ASSERT(col<_cols);
+#endif
+	pixel = data[row*_cols+col];
+}
+
+inline double C_Matrix_Container::GetPixel(unsigned long row, unsigned long col)
+{
+#ifndef _EXTERNALDLL
+	ASSERT(row<_rows);
+	ASSERT(col<_cols);
+#endif
+	return data[row*_cols+col];
+}
+
+void C_Matrix_Container::SetPixel(unsigned long row, unsigned long col,double pixel)
+{	
+#ifndef _EXTERNALDLL
+	ASSERT(row<_rows);
+	ASSERT(col<_cols);
+#endif
+	data[row*_cols+col] = pixel;
+}
+
+BOOL C_Matrix_Container::Add(C_Matrix_Container* matrix)
+{
+	unsigned long r;
+	if(_rows!=matrix->_rows || _cols!=matrix->_cols)
+		return false;
+	for(r=0;r<GetNumofElements();r++)
+		data[r]+=matrix->data[r];
+	return true;
+}
+
+BOOL C_Matrix_Container::Sub(C_Matrix_Container* matrix)
+{
+	unsigned long r;
+	if(_rows!=matrix->_rows || _cols!=matrix->_cols)
+		return false;
+	for(r=0;r<GetNumofElements();r++)
+		data[r]-=matrix->data[r];
+	return true;
+}
+
+BOOL C_Matrix_Container::DotMulti(C_Matrix_Container* matrix)
+{
+	unsigned long r;
+	if(_rows!=matrix->_rows || _cols!=matrix->_cols)
+		return false;
+	for(r=0;r<GetNumofElements();r++)
+		data[r]*=matrix->data[r];
+	return true;
+}
+
+void C_Matrix_Container::getMinMax(double& min, double& max)
+{
+	unsigned long r;
+	min = 1.7e308;
+	max = -1.7e308;;
+	for(r=0;r<GetNumofElements();r++)	{
+		if(data[r]<min)	min = data[r];
+		if(data[r]>max) max = data[r];
+	}
+}
+void C_Matrix_Container::Transpose(void)
+{
+	C_Matrix_Container tmp;
+	tmp.AllocateData(_cols,_rows);
+	unsigned long c,r;
+	for(c=0;c<_cols;c++)
+		for(r=0;r<_rows;r++)
+			tmp.SetPixel(c,r,GetPixel(r,c));
+	for(c=0;c<tmp.GetNumofElements();c++)
+		data[c] = tmp.data[c];
+	_rows = tmp._rows;
+	_cols = tmp._cols;
+}
+
+BOOL C_Matrix_Container::Dump(char *filename)
+{
+	FILE *stream;
+	unsigned long actrow, actcol;
+	double liczba;
+
+	if( fopen_s( &stream, filename, "w" ) == 0 )
+	{
+		if(data==NULL) {fprintf_s(stream,"Empty Matrix"); return FALSE;}
+		fprintf_s(stream,"[");
+		for(actrow=0;actrow<_rows;actrow++)
+			for(actcol=0;actcol<_cols;actcol++)	{
+				GetPixel(actrow,actcol,liczba);
+				fprintf_s(stream,"%+030.20f",liczba);
+				if(actcol==_cols-1)
+					fprintf_s(stream,";\n");
+				else
+					fprintf_s(stream,",");
+			}
+		fpos_t position;
+		fgetpos(stream,&position);
+		position-=3;
+		fsetpos(stream,&position);
+		fprintf_s(stream,"];");
+		fclose( stream );
+		return TRUE;
+	}
+	else		
+		return FALSE;
+}
+
+BOOL C_Matrix_Container::DumpBinary(char *filename)
+{
+	FILE *stream;
+	unsigned long actrow;
+
+	if( fopen_s( &stream, filename, "w" ) == 0 )
+	{
+		if(data==NULL) {fprintf_s(stream,"Empty Matrix"); return FALSE;}
+		fprintf_s(stream,"%ld\n",_rows);
+		fprintf_s(stream,"%ld\n",_cols);
+		for(actrow=0;actrow<GetNumofElements();actrow++)
+			fprintf_s(stream,"%+030.20f\n",data[actrow]);
+			
+		fclose( stream );
+		return TRUE;
+	}
+	else		
+		return FALSE;
+}

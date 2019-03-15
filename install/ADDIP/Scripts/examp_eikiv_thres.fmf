@@ -1,0 +1,13 @@
+chdir('C:\\addip\radiograms');
+% using eikiv thresholding
+a = imread('TestSample_2_3.tif');
+
+handle = imshow('original',a,0);
+
+out_med = median(a,0,51,51);
+
+out_sub = imsub(a,out_med);
+out_ith = eth(out_sub,35,3,10,0.97,128);
+out_med1 = median(out_ith,0,9,9);
+
+handle1 = imshow('ith',out_med1,1);

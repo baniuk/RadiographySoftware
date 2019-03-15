@@ -1,0 +1,15 @@
+chdir('c:\\Test Welds - Technic Control\\');
+im = imread('FIB94B.TIF');
+
+imcut = cutroi(im,101,2999,101,1899);
+
+handle1 = imshow('imcut',imcut,1);
+
+
+[tab1,tab2,Roi] = detectROI(imcut,90,10,50,10,20,0,'C:\\Program Files\\PSz\\ADDIP\\ADDIP\\DLL\\ApproximationParam.txt');
+
+handle2 = imshow('Roi',Roi,0);
+
+imwrite('c:\\Test Welds - Technic Control\\FIB94B_ROI.tif',Roi);
+
+

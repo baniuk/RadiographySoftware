@@ -1,0 +1,5 @@
+LIBRARY	"readtiff"
+
+EXPORTS Introduce
+EXPORTS Do
+EXPORTS SetOutput

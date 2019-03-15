@@ -1,0 +1,8 @@
+chdir('C:\\addip\\radiograms');
+
+% read image
+original = readtiff('Ind.tif');
+% calculates distances between objects
+list = neighb(original,50,1);
+% display image on the screen (with scaling)
+handle1 = imshow('original',original,1);

@@ -1,0 +1,19 @@
+void INDEX(C_Image *input_binary_image, C_Image *output_image);
+output image - memory allocated in function
+
+
+int number=FUTURES(C_Image *original_image, C_Image *image_after_indexing,C_Image *binary_image,double *tab,double minimal_size, double max_size, double *param);
+
+number - Amount of qualified defects;
+tab - table where are recorded parameters of defects (size of this table must be allocated before);
+minimal_size - minimal size of a defect;
+max_size - max size of a defect;
+param - table where are pointed which parameters will be appointed,(size must be allocated before);
+
+void DESC(C_Image *original_image, double *table_with_paramters_of_defects, int number_of_defects);
+
+
+void SAVETXT(double *table_with_parameters,int number_of_defects, CString name_of_file);
+
+
+MEDIAN, Hoare, Partition, Maks, Outline - without changes

@@ -1,0 +1,4 @@
+LIBRARY	"GetImSize"
+EXPORTS Do
+EXPORTS Introduce
+EXPORTS SetOutput

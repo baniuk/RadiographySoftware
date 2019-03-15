@@ -1,0 +1,29 @@
+chdir('C:\\');
+%
+or1 = imread('te12284-170.tif');
+%
+handle1 = imshow('original', or1, 1);
+%
+hist(or1,1);
+%
+mm = dm('[100,150,100,150]');
+%
+obraz = norm_radio(or1,1024,5000,1,8,mm);
+%
+handle2 = imshow('normalized', obraz, 1);
+hist(obraz,1);
+%
+[max,min,sred,med] = statistic(obraz, mm);
+%
+imwrite('C:\\addip\\radiograms\\normal.tif',obraz,0);
+%
+savestat('C:\\addip\\radiograms\\stat1.txt',max,min,sred,med);
+%
+mm = dm('[0,0,0,0]');
+%
+[max,min,sred,med] = statistic(obraz, mm);
+%
+savestat('C:\\addip\\radiograms\\stat_all.txt',max,min,sred,med);
+
+
+

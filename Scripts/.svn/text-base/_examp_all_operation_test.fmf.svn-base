@@ -1,0 +1,17 @@
+chdir('C:\\');
+%read mage
+a = imread('FilmFree_A_Szczecin_NA_NA_NA_TC_Spoiny_27-09-2007_14-40-04_171A.tif');
+handle = imshow('original',a,1);
+% crop image
+b = cropImage(a);
+handle1 = imshow('croped',b,1);
+% calculate weld angle of the image and rotate by this angle
+ang = weldAngle(b,10);
+c = rotateImage(b,ang,65535);
+handle2 = imshow('rotated',c,1);
+% crop image after rotation
+out = cropImage(c);
+handle3 = imshow('out',out,1);
+%detect ROIX
+roix = lengthArea(out,10,0,16,730,50);
+handle4 = imshow('roix',roix,1);

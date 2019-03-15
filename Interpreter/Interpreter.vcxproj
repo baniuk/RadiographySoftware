@@ -1,0 +1,236 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{FAF93E7C-8A9C-462B-B762-760BCC435680}</ProjectGuid>
+    <RootNamespace>Interpreter</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>NotSet</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>NotSet</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>$(SolutionDir)GnuWin32\include;C:\Program Files (x86)\Microsoft Visual Studio 8\VC\PlatformSDK\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <BrowseInformation>true</BrowseInformation>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>cv.lib;highgui.lib;cxcore.lib;libtiff.lib;glaux.lib;glu32.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)GnuWin32\lib;C:\Program Files (x86)\Microsoft Visual Studio 8\VC\PlatformSDK\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>$(SolutionDir)GnuWin32\include;C:\Program Files (x86)\Microsoft Visual Studio 8\VC\PlatformSDK\Include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>cv.lib;highgui.lib;cxcore.lib;libtiff.lib;glaux.lib;glu32.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)GnuWin32\lib;C:\Program Files (x86)\Microsoft Visual Studio 8\VC\PlatformSDK\Lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <RandomizedBaseAddress>false</RandomizedBaseAddress>
+      <DataExecutionPrevention>
+      </DataExecutionPrevention>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="C_Command_Chdir.cpp" />
+    <ClCompile Include="C_Command_Crackdetection.cpp" />
+    <ClCompile Include="C_Command_Cutroi.cpp" />
+    <ClCompile Include="C_Command_Dm.cpp" />
+    <ClCompile Include="C_Command_Eth.cpp" />
+    <ClCompile Include="C_Command_FastMedianqs.cpp" />
+    <ClCompile Include="C_Command_Features.cpp" />
+    <ClCompile Include="C_Command_Fftfilt.cpp" />
+    <ClCompile Include="C_Command_Fillholes.cpp" />
+    <ClCompile Include="C_Command_Gth.cpp" />
+    <ClCompile Include="C_Command_Hist.cpp" />
+    <ClCompile Include="C_Command_Imwrite.cpp" />
+    <ClCompile Include="C_Command_Ith.cpp" />
+    <ClCompile Include="C_Command_Matrixread.cpp" />
+    <ClCompile Include="C_Command_Matrixwrite.cpp" />
+    <ClCompile Include="C_Command_Median.cpp" />
+    <ClCompile Include="C_Command_Neural.cpp" />
+    <ClCompile Include="C_Command_Nth.cpp" />
+    <ClCompile Include="C_Command_Oth.cpp" />
+    <ClCompile Include="C_Command_Outline.cpp" />
+    <ClCompile Include="C_Command_Particals.cpp" />
+    <ClCompile Include="C_Command_Prewitt.cpp" />
+    <ClCompile Include="C_Command_Roberts.cpp" />
+    <ClCompile Include="C_Command_Savefeatures.cpp" />
+    <ClCompile Include="C_Command_Showfeatures.cpp" />
+    <ClCompile Include="C_Command_Sobel.cpp" />
+    <ClCompile Include="C_Command_Sth.cpp" />
+    <ClCompile Include="C_Command_Thread.cpp" />
+    <ClCompile Include="C_Commans_ISeePort.cpp" />
+    <ClCompile Include="C_Error.cpp" />
+    <ClCompile Include="C_Image_Container.cpp" />
+    <ClCompile Include="C_InterpBase.cpp" />
+    <ClCompile Include="C_Line.cpp" />
+    <ClCompile Include="C_Matrix_Container.cpp" />
+    <ClCompile Include="C_Variable_Matrixwrite.cpp" />
+    <ClCompile Include="DataTypes.cpp" />
+    <ClCompile Include="Interpreter.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="C_Command_Add.cpp" />
+    <ClCompile Include="C_Command_Dilate.cpp" />
+    <ClCompile Include="C_Command_Erode.cpp" />
+    <ClCompile Include="C_Command_Filter2d.cpp" />
+    <ClCompile Include="C_Command_GLshow.cpp" />
+    <ClCompile Include="C_Command_Imadd.cpp" />
+    <ClCompile Include="C_Command_Imclose.cpp" />
+    <ClCompile Include="C_Command_Immulti.cpp" />
+    <ClCompile Include="C_Command_Imread.cpp" />
+    <ClCompile Include="C_Command_Imshow.cpp" />
+    <ClCompile Include="C_Command_Imsub.cpp" />
+    <ClCompile Include="C_Command_Load.cpp" />
+    <ClCompile Include="C_Command_SaveImageM.cpp" />
+    <ClCompile Include="C_Command_Sin.cpp" />
+    <ClCompile Include="C_Command_Th.cpp" />
+    <ClCompile Include="C_Commands.cpp" />
+    <ClCompile Include="C_Variables.cpp" />
+    <ClCompile Include="C_Variables_Image.cpp" />
+    <ClCompile Include="C_Variables_Matrix.cpp" />
+    <ClCompile Include="C_Variables_Number.cpp" />
+    <ClCompile Include="C_Variables_String.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="C_Command_Chdir.h" />
+    <ClInclude Include="C_Command_Crackdetection.h" />
+    <ClInclude Include="C_Command_Cutroi.h" />
+    <ClInclude Include="C_Command_Dm.h" />
+    <ClInclude Include="C_Command_Eth.h" />
+    <ClInclude Include="C_Command_FastMedianqs.h" />
+    <ClInclude Include="C_Command_Features.h" />
+    <ClInclude Include="C_Command_Fftfilt.h" />
+    <ClInclude Include="C_Command_Fillholes.h" />
+    <ClInclude Include="C_Command_Gth.h" />
+    <ClInclude Include="C_Command_Hist.h" />
+    <ClInclude Include="C_Command_Imwrite.h" />
+    <ClInclude Include="C_Command_Ith.h" />
+    <ClInclude Include="C_Command_Matrixread.h" />
+    <ClInclude Include="C_Command_Matrixwrite.h" />
+    <ClInclude Include="C_Command_Median.h" />
+    <ClInclude Include="C_Command_Neural.h" />
+    <ClInclude Include="C_Command_Nth.h" />
+    <ClInclude Include="C_Command_Oth.h" />
+    <ClInclude Include="C_Command_Outline.h" />
+    <ClInclude Include="C_Command_Particals.h" />
+    <ClInclude Include="C_Command_Prewitt.h" />
+    <ClInclude Include="C_Command_Roberts.h" />
+    <ClInclude Include="C_Command_Savefeatures.h" />
+    <ClInclude Include="C_Command_Showfeatures.h" />
+    <ClInclude Include="C_Command_Sobel.h" />
+    <ClInclude Include="C_Command_Sth.h" />
+    <ClInclude Include="C_Command_Thread.h" />
+    <ClInclude Include="C_Commans_ISeePort.h" />
+    <ClInclude Include="C_Error.h" />
+    <ClInclude Include="C_Image_Container.h" />
+    <ClInclude Include="C_InterpBase.h" />
+    <ClInclude Include="C_Line.h" />
+    <ClInclude Include="C_Matrix_Container.h" />
+    <ClInclude Include="C_Variable_Matrixwrite.h" />
+    <ClInclude Include="DataTypes.h" />
+    <ClInclude Include="Interpreter.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="C_Command_Add.h" />
+    <ClInclude Include="C_Command_Dilate.h" />
+    <ClInclude Include="C_Command_Erode.h" />
+    <ClInclude Include="C_Command_Filter2d.h" />
+    <ClInclude Include="C_Command_GLshow.h" />
+    <ClInclude Include="C_Command_Imadd.h" />
+    <ClInclude Include="C_Command_Imclose.h" />
+    <ClInclude Include="C_Command_Immulti.h" />
+    <ClInclude Include="C_Command_Imread.h" />
+    <ClInclude Include="C_Command_Imshow.h" />
+    <ClInclude Include="C_Command_Imsub.h" />
+    <ClInclude Include="C_Command_Load.h" />
+    <ClInclude Include="C_Command_SaveImageM.h" />
+    <ClInclude Include="C_Command_Sin.h" />
+    <ClInclude Include="C_Command_Th.h" />
+    <ClInclude Include="C_Commands.h" />
+    <ClInclude Include="C_Variables.h" />
+    <ClInclude Include="C_Variables_Image.h" />
+    <ClInclude Include="C_Variables_Matrix.h" />
+    <ClInclude Include="C_Variables_Number.h" />
+    <ClInclude Include="C_Variables_String.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Interpreter.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

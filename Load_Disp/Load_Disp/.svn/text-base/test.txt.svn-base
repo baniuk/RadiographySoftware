@@ -1,0 +1,40 @@
+// Load_Disp.cpp : Defines the entry point for the console application.
+//
+
+#include "stdafx.h"
+#include <cv.h>
+#include <highgui.h>
+#include <cxcore.h>
+
+IplImage *imread(char *filename);
+void image(char *WinName,IplImage *img);
+
+
+int _tmain(int argc, _TCHAR* argv[])
+{
+	IplImage *img;
+	
+	char *filename="D:\\obraz.tif";
+	
+	img=imread(filename);
+	image("Image",img);
+	
+
+	cvWaitKey();
+	cvDestroyWindow("Image:");
+	
+	return 0;
+}
+
+IplImage *imread(char *filename)
+{
+	IplImage *pom1;
+	pom1=cvLoadImage(filename);
+	return(pom1);
+}
+
+void image(char *WinName,IplImage *img)
+{
+	cvNamedWindow(WinName,1);
+	cvShowImage(WinName,img);
+}

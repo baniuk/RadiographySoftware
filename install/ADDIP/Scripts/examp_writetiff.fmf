@@ -1,0 +1,20 @@
+chdir('C:\\addip\\radiograms');
+
+% read image
+original = readtiff('TestSample_2_3.tif');
+
+% cut part from original
+%cut = cutroi(original,0,504,200,520);
+
+% write new image
+imwrite('copy1.tif',original,0);
+writetiff(original,'copy2.tif',1);
+
+% read it again
+copy1 = readtiff('copy1.tif');
+copy2 = readtiff('copy2.tif');
+
+% and display it on the screen (with scaling)
+handle1 = imshow('Original',original,1);
+handle2 = imshow('Copy1',copy1,1);
+handle3 = imshow('Copy2',copy2,1);

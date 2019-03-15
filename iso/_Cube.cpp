@@ -1,0 +1,29 @@
+// _Cube.cpp: implementation of the C_Cube class.
+//
+//////////////////////////////////////////////////////////////////////
+
+#include "stdafx.h"
+#include "iso.h"
+#include "_Cube.h"
+
+#ifdef _DEBUG
+#undef THIS_FILE
+static char THIS_FILE[]=__FILE__;
+#define new DEBUG_NEW
+#endif
+
+//////////////////////////////////////////////////////////////////////
+// Construction/Destruction
+//////////////////////////////////////////////////////////////////////
+
+C_Cube::C_Cube()
+{
+	mode=CUBE;
+	czyZaladowane=FALSE;
+
+}
+
+C_Cube::~C_Cube()
+{
+
+}

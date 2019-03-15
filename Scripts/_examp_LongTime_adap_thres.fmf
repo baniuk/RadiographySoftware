@@ -1,0 +1,14 @@
+chdir('C:\\addip\radiograms');
+% using adaptive thresholding
+a = imread('TestSample_2_3.tif');
+
+handle = imshow('original',a,0);
+
+out_med = median(a,0,51,51);
+
+out_sub = imsub(a,out_med);
+out_ith = ath(out_sub,75,1550);
+out_med1 = median(out_ith,0,9,9);
+
+
+handle1 = imshow('ith',out_med1,1);

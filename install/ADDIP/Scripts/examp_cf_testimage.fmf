@@ -1,0 +1,11 @@
+threads(4);
+chdir('C:\\');
+org=readtiff('wzorzec.tif');
+bw = readtiff('wzorzec.tif');
+ind = index(bw);
+handle3 = imshow('org',org,1);
+handle4 = imshow('ind',ind,1);
+writetiff(ind,'ind.tif',0);
+c = cf(org,ind,bw);
+matrixwrite(c,'features_out.m');
+%matrixwrite(a,'in.m');

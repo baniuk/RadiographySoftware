@@ -1,0 +1,17 @@
+chdir('c:\\addip\\radiograms\\');
+or1 = readtiff('TestIm2.3.tif');
+mm=dm('[0,0,0,0]');
+or= norm_radio(or1,4000,10000,0.5,8,mm);
+med = fastmedian(or,0,51,51);
+sub = imsub(or,med);
+th = ith(sub,0.7);
+outmed = fastmedian(th,0,5,5);
+indimg = index(outmed);
+[num, tab] = calcfeat(or,indimg,outmed,20,100000);
+savefeat(tab,num,'wynik2_3.txt');
+obraz = genindexedimg(or,outmed,tab,num,1);
+imwrite('wynik2_3.tif',obraz,0);
+% displaying result
+drukuj = imshow('original1', obraz,0);
+
+

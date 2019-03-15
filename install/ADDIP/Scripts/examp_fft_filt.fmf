@@ -1,0 +1,9 @@
+chdir('C:\\addip\radiograms');
+original = imread('TestSample_2_3.tif')
+ee1 = imshow('original',original,1);
+[outlo,zer] = fftfilt(original,0.1,5);
+[outhi,zer] = fftfilt(original,3,500);
+h = imshow('lo',outlo,1);
+h1 = imshow('extended',zer,1);
+h2 = imshow('hir',outhi,1);
+%imwrite('c:\\out.tif',outlo,1);

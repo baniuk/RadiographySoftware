@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="detectROI">
+</Property><Property Name="Solution File" Value="P:\MyProjects\RadiographySoftware\detectROI\detectROI.sln">
+</Property><Property Name="User Options File" Value="P:\MyProjects\RadiographySoftware\detectROI\detectROI.suo">
+</Property><Property Name="Date" Value="28 lutego 2012">
+</Property><Property Name="Time" Value="13:19">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="detectROI.sln" Description="File successfully backed up as P:\MyProjects\RadiographySoftware\detectROI\detectROI.sln.old">
+</Event><Event ErrorLevel="0" Project="" Source="detectROI.suo" Description="File successfully backed up as P:\MyProjects\RadiographySoftware\detectROI\detectROI.suo.old">
+</Event><Event ErrorLevel="0" Project="detectROI" Source="detectROI\detectROI.vcproj" Description="Converting project file 'P:\MyProjects\RadiographySoftware\detectROI\detectROI\detectROI.vcproj'.">
+</Event><Event ErrorLevel="1" Project="detectROI" Source="detectROI\detectROI.vcproj" Description="VCWebServiceProxyGeneratorTool is no longer supported. The tool has been removed from your project settings.">
+</Event><Event ErrorLevel="1" Project="detectROI" Source="detectROI\detectROI.vcproj" Description="Attribute 'Detect64BitPortabilityProblems' of 'VCCLCompilerTool' is not supported in this version and has been removed during conversion.">
+</Event><Event ErrorLevel="1" Project="detectROI" Source="detectROI\detectROI.vcproj" Description="Attribute 'Detect64BitPortabilityProblems' of 'VCCLCompilerTool' is not supported in this version and has been removed during conversion.">
+</Event><Event ErrorLevel="1" Project="detectROI" Source="detectROI\detectROI.vcproj" Description="MSB8012: $(TargetPath) ('P:\MyProjects\RadiographySoftware\detectROI\Debug\detectROI.dll') does not match the Linker's OutputFile property value 'P:\MyProjects\RadiographySoftware\detectROI\RadioGUI\dll\detectROI.dll' ('P:\MyProjects\RadiographySoftware\detectROI\RadioGUI\dll\detectROI.dll') in project configuration 'Debug|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Link.OutputFile).">
+</Event><Event ErrorLevel="1" Project="detectROI" Source="detectROI\detectROI.vcproj" Description="MSB8012: $(TargetPath) ('P:\MyProjects\RadiographySoftware\detectROI\Release\detectROI.dll') does not match the Linker's OutputFile property value 'P:\MyProjects\RadiographySoftware\detectROI\RadioGUI\dll\detectROI.dll' ('P:\MyProjects\RadiographySoftware\detectROI\RadioGUI\dll\detectROI.dll') in project configuration 'Release|Win32'. This may cause your project to build incorrectly. To correct this, please make sure that $(TargetPath) property value matches the value specified in %(Link.OutputFile).">
+</Event><Event ErrorLevel="0" Project="detectROI" Source="detectROI\detectROI.vcproj" Description="Done converting to new project file 'P:\MyProjects\RadiographySoftware\detectROI\detectROI\detectROI.vcxproj'.">
+</Event><Event ErrorLevel="3" Project="detectROI" Source="detectROI\detectROI.vcproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="detectROI.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="detectROI.sln" Description="Converted">
+</Event></UpgradeLog>

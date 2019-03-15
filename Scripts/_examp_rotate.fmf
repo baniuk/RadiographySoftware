@@ -1,0 +1,11 @@
+chdir('C:\\');
+% read image
+a = readtiff('TestSample_3.2.tif');
+% show readed image
+handle = imshow('original',a,0);
+% rotate image
+out = rotateImage(a,10,65535);
+% show result 
+handle1 = imshow('out',out,0);
+
+

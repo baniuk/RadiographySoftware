@@ -1,0 +1,14 @@
+Dorobic:
+
+1. mozliwosc obslugi zmiennych o roznych typach przez jedna komende (moze dzidziczyc z klasy komendy??)
+	- problem z tworzeniem wlasciwego obiekt - dodac tworzenie z zaleznosci od nazwy oraz od podanych parametrow wejsciowych
+	
+2. Obs³uge operatorow - generalnie obsluge linii nie zawierajacych instrukcji
+	- przyrownanie zmiennych
+3. PrintVariable powinno byæ w klasie C_Variables
+4. 
+5. 
+
+7. Gdy operacja a=5 jest wykonywana na a które ju¿ istnieje jest niebezpieceñstwo wycieków pamiêci. AssignValue powinno zwalniac dotychczasow¹ pamiêæ
+8. Obs³uga komend bez parametrów wejœciowych (problemy w buildline)
+9. 

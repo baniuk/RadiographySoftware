@@ -1,0 +1,4 @@
+LIBRARY	"ISeeGetFile"
+EXPORTS Do
+EXPORTS Introduce
+EXPORTS SetOutput

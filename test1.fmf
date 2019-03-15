@@ -1,0 +1,3 @@
+a = imread('c:\compu1.tif');
+b = imshow('test',a);
+% imclose(b);

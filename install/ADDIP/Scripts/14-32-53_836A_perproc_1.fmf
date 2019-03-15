@@ -1,0 +1,18 @@
+%read image%
+chdir('c:\\RadiographySoftware\\install\\ADDIP\\radiograms');
+a = readtiff('FilmFree_A_Szczecin_NA_NA_NA_TC_Spoiny_27-09-2007_14-32-53_836A.tif');
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%detect angle%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+b = cropImage(a,60000);
+ang = weldAngle(b,5);
+c = rotateImage(b,ang,65535);
+out = cropImage(c,60000);
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+handle0 = imshow('original',a,1);
+handle1 = imshow('croped',b,1);
+handle2 = imshow('rotated',c,1);
+handle3 = imshow('out',out,1);
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+writetiff(out,'14-32-53_836A.tif',0);

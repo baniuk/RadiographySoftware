@@ -1,0 +1,26 @@
+char nazwa[100],nazwa1[100];
+	CFileDialog dlg(TRUE, _T("*.fmf"), _T(""), OFN_FILEMUSTEXIST|OFN_PATHMUSTEXIST|OFN_HIDEREADONLY, _T("Batch File (*.fmf) |*.fmf|All Files (*.*)|*.*||"),NULL);
+	char title[]= {"Open Image"};
+	dlg.m_ofn.lpstrTitle= LPCWSTR(title);
+	if (dlg.DoModal() == IDOK) {
+	CString path= dlg.GetPathName(); 
+	int zm1 = path.GetLength();
+	const wchar_t *fil=path.GetString();
+	
+	for (int j=0;j<zm1;j++)
+	{
+		nazwa[j]=*(fil++);
+	}
+	int k=0;
+	for (int j=0;j<zm1;j++)
+	{
+		
+		nazwa1[k++]=nazwa[j];
+		if (nazwa[j]=='\\')
+		{
+			nazwa1[k++]='\\';
+			
+		}
+	}
+	nazwa1[k]=NULL;
+	char* nazwa=(char*)nazwa1;

@@ -1,0 +1,5 @@
+LIBRARY	"detectROI"
+EXPORTS Do
+EXPORTS Introduce
+EXPORTS SetOutput 
+

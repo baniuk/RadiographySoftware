@@ -1,0 +1,7 @@
+a = imread('c:\\TestSample_2.3.tif');
+
+handle = imshow('original',a,0);
+
+out_fft = fftfilt(a,0.01,1);
+
+handle1 = imshow('fft filtering',out_fft,1);

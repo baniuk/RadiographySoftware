@@ -1,0 +1,14 @@
+chdir('C:\\addip\radiograms');
+% read image
+Image_bef = imread('iqi_test_bef.tif');
+Image_aft = imread('iqi_test_aft.tif');
+
+handle1 = imshow('Image_bef',Image_bef,0);
+handle2 = imshow('Image_aft',Image_aft,0);
+
+iqiImage =IQImax(Image_bef,Image_aft,50,6,6,'C:\\addip\radiograms\\IQIsData.txt');
+% and display it on the screen (without scaling)
+handle3 = imshow('iqiImage',iqiImage,0);
+%imwrite('iqi_result.tif',iqiImage,0);
+
+

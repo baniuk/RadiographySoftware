@@ -1,0 +1,211 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{D7C57E57-C5F2-4555-9044-C9A87E8FA33F}</ProjectGuid>
+    <RootNamespace>ADDIP_clases</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration)\</IntDir>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>$(SolutionDir)SDK;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>Create</PrecompiledHeader>
+      <PrecompiledHeaderFile>stdafx.h</PrecompiledHeaderFile>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>OldStyle</DebugInformationFormat>
+      <OmitDefaultLibName>true</OmitDefaultLibName>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(SolutionDir)SDK\Debug\$(ProjectName)_D.lib</OutputFile>
+    </Lib>
+    <PostBuildEvent>
+      <Command>"$(SolutionDir)xcopy" "$(SolutionDir)SDK\Debug\$(ProjectName)_D.lib" "$(SolutionDir)install\ADDIP\SDK\Debug\" /Y /Q
+"$(SolutionDir)xcopy" "$(SolutionDir)SDK\C_Error.h" "$(SolutionDir)install\ADDIP\SDK\" /Y /Q
+"$(SolutionDir)xcopy" "$(SolutionDir)SDK\C_Image_Container.h" "$(SolutionDir)install\ADDIP\SDK\" /Y /Q
+"$(SolutionDir)xcopy" "$(SolutionDir)SDK\C_Matrix_Container.h" "$(SolutionDir)install\ADDIP\SDK\" /Y /Q
+"$(SolutionDir)xcopy" "$(SolutionDir)SDK\C_Variables.h" "$(SolutionDir)install\ADDIP\SDK\" /Y /Q
+"$(SolutionDir)xcopy" "$(SolutionDir)SDK\C_Variables_Image.h" "$(SolutionDir)install\ADDIP\SDK\" /Y /Q
+"$(SolutionDir)xcopy" "$(SolutionDir)SDK\C_Variables_Matrix.h" "$(SolutionDir)install\ADDIP\SDK\" /Y /Q
+"$(SolutionDir)xcopy" "$(SolutionDir)SDK\C_Variables_Number.h" "$(SolutionDir)install\ADDIP\SDK\" /Y /Q
+"$(SolutionDir)xcopy" "$(SolutionDir)SDK\C_Variables_String.h" "$(SolutionDir)install\ADDIP\SDK\" /Y /Q
+"$(SolutionDir)xcopy" "$(SolutionDir)SDK\Datatypes.h" "$(SolutionDir)install\ADDIP\SDK\" /Y /Q
+"$(SolutionDir)xcopy" "$(SolutionDir)SDK\C_MultiProcesor.h" "$(SolutionDir)install\ADDIP\SDK\" /Y /Q
+"$(SolutionDir)xcopy" "$(SolutionDir)SDK\C_Lib.h" "$(SolutionDir)install\ADDIP\SDK\" /Y /Q
+"$(SolutionDir)xcopy" "$(SolutionDir)SDK\C_MultiProcesor.cpp" "$(SolutionDir)install\ADDIP\SDK\" /Y /Q
+"$(SolutionDir)xcopy" "$(SolutionDir)SDK\Cpp_Lib.h" "$(SolutionDir)install\ADDIP\SDK\" /Y /Q
+"$(SolutionDir)xcopy" "$(SolutionDir)SDK\DLL_C_Datatypes.h" "$(SolutionDir)install\ADDIP\SDK\" /Y /Q
+"$(SolutionDir)xcopy" "$(SolutionDir)SDK\DLL_Cpp_Datatypes.h" "$(SolutionDir)install\ADDIP\SDK\" /Y /Q
+"$(SolutionDir)xcopy" "$(SolutionDir)SDK\DLL_Size_Def.h" "$(SolutionDir)install\ADDIP\SDK\" /Y /Q
+"$(SolutionDir)xcopy" "$(SolutionDir)SDK\Lib.cpp" "$(SolutionDir)install\ADDIP\SDK\" /Y /Q
+"$(SolutionDir)xcopy" "$(SolutionDir)SDK\Lib2.cpp" "$(SolutionDir)install\ADDIP\SDK\" /Y /Q
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <FavorSizeOrSpeed>Speed</FavorSizeOrSpeed>
+      <WholeProgramOptimization>false</WholeProgramOptimization>
+      <AdditionalIncludeDirectories>$(SolutionDir)SDK;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <EnableEnhancedInstructionSet>NotSet</EnableEnhancedInstructionSet>
+      <PrecompiledHeader>Create</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>OldStyle</DebugInformationFormat>
+      <OmitDefaultLibName>true</OmitDefaultLibName>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(SolutionDir)SDK\$(ProjectName).lib</OutputFile>
+    </Lib>
+    <PostBuildEvent>
+      <Command>"$(SolutionDir)xcopy" "$(SolutionDir)SDK\$(ProjectName).lib" "$(SolutionDir)install\ADDIP\SDK\" /Y /Q
+"$(SolutionDir)xcopy" "$(SolutionDir)SDK\C_Error.h" "$(SolutionDir)install\ADDIP\SDK\" /Y /Q
+"$(SolutionDir)xcopy" "$(SolutionDir)SDK\C_Image_Container.h" "$(SolutionDir)install\ADDIP\SDK\" /Y /Q
+"$(SolutionDir)xcopy" "$(SolutionDir)SDK\C_Matrix_Container.h" "$(SolutionDir)install\ADDIP\SDK\" /Y /Q
+"$(SolutionDir)xcopy" "$(SolutionDir)SDK\C_Variables.h" "$(SolutionDir)install\ADDIP\SDK\" /Y /Q
+"$(SolutionDir)xcopy" "$(SolutionDir)SDK\C_Variables_Image.h" "$(SolutionDir)install\ADDIP\SDK\" /Y /Q
+"$(SolutionDir)xcopy" "$(SolutionDir)SDK\C_Variables_Matrix.h" "$(SolutionDir)install\ADDIP\SDK\" /Y /Q
+"$(SolutionDir)xcopy" "$(SolutionDir)SDK\C_Variables_Number.h" "$(SolutionDir)install\ADDIP\SDK\" /Y /Q
+"$(SolutionDir)xcopy" "$(SolutionDir)SDK\C_Variables_String.h" "$(SolutionDir)install\ADDIP\SDK\" /Y /Q
+"$(SolutionDir)xcopy" "$(SolutionDir)SDK\Datatypes.h" "$(SolutionDir)install\ADDIP\SDK\" /Y /Q
+"$(SolutionDir)xcopy" "$(SolutionDir)SDK\C_MultiProcesor.h" "$(SolutionDir)install\ADDIP\SDK\" /Y /Q
+"$(SolutionDir)xcopy" "$(SolutionDir)SDK\C_Lib.h" "$(SolutionDir)install\ADDIP\SDK\" /Y /Q
+"$(SolutionDir)xcopy" "$(SolutionDir)SDK\C_MultiProcesor.cpp" "$(SolutionDir)install\ADDIP\SDK\" /Y /Q
+"$(SolutionDir)xcopy" "$(SolutionDir)SDK\Cpp_Lib.h" "$(SolutionDir)install\ADDIP\SDK\" /Y /Q
+"$(SolutionDir)xcopy" "$(SolutionDir)SDK\DLL_C_Datatypes.h" "$(SolutionDir)install\ADDIP\SDK\" /Y /Q
+"$(SolutionDir)xcopy" "$(SolutionDir)SDK\DLL_Cpp_Datatypes.h" "$(SolutionDir)install\ADDIP\SDK\" /Y /Q
+"$(SolutionDir)xcopy" "$(SolutionDir)SDK\DLL_Size_Def.h" "$(SolutionDir)install\ADDIP\SDK\" /Y /Q
+"$(SolutionDir)xcopy" "$(SolutionDir)SDK\Lib.cpp" "$(SolutionDir)install\ADDIP\SDK\" /Y /Q
+"$(SolutionDir)xcopy" "$(SolutionDir)SDK\Lib2.cpp" "$(SolutionDir)install\ADDIP\SDK\" /Y /Q
+</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="C_Error.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+    </ClCompile>
+    <ClCompile Include="C_Image_Container.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+    </ClCompile>
+    <ClCompile Include="C_Matrix_Container.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+    </ClCompile>
+    <ClCompile Include="..\SDK\C_MultiProcesor.cpp" />
+    <ClCompile Include="C_Variables.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+    </ClCompile>
+    <ClCompile Include="C_Variables_Image.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+    </ClCompile>
+    <ClCompile Include="C_Variables_Matrix.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+    </ClCompile>
+    <ClCompile Include="C_Variables_Number.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+    </ClCompile>
+    <ClCompile Include="C_Variables_String.cpp">
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
+      <XMLDocumentationFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.xdc</XMLDocumentationFileName>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">StdAfx.h</PrecompiledHeaderFile>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\SDK\C_Error.h" />
+    <ClInclude Include="..\SDK\C_Image_Container.h" />
+    <ClInclude Include="..\SDK\C_Matrix_Container.h" />
+    <ClInclude Include="..\SDK\C_MultiProcesor.h" />
+    <ClInclude Include="..\SDK\C_Variables.h" />
+    <ClInclude Include="..\SDK\C_Variables_Image.h" />
+    <ClInclude Include="..\SDK\C_Variables_Matrix.h" />
+    <ClInclude Include="..\SDK\C_Variables_Number.h" />
+    <ClInclude Include="..\SDK\C_Variables_String.h" />
+    <ClInclude Include="stdafx.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RadioGUI\RadioGUI.vcxproj">
+      <Project>{003e95cf-ccf0-458b-a81e-86d959b714ac}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

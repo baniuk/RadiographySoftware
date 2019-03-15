@@ -1,0 +1,22 @@
+%read image
+chdir('G:\\Baza Wad\\Image 1');
+a = readtiff('14-32-53_836A_flaw1A.tif');
+b1 = readtiff('14-32-53_836A_flaw1A_index1.tif');
+b2 = readtiff('14-32-53_836A_flaw1A_index2.tif');
+c1 = readtiff('14-32-53_836A_flaw1A_ath.tif');
+c2 = readtiff('14-32-53_836A_flaw1A_sthad.tif');
+tab1 = cf(a,b1,c1);
+tab2 = cf(a,b2,c2);
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+rem = dm('[28,22,21,1,0]');
+NNin1 = NNDataPrepare(tab1,rem,0); % 0 - features in columns, 1 - features in rows
+NNin2 = NNDataPrepare(tab2,rem,0);
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+handle0 = imshow('original',a,1);
+handle1 = imshow('ind1',b1,1);
+handle2 = imshow('ind2',b2,1);
+handle3 = imshow('ath',c1,1);
+handle4 = imshow('sthad',c2,1);
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+matrixwrite(tab1,'14-32-53_836A_flaw1A_ath_feats.m');
+matrixwrite(tab2,'14-32-53_836A_flaw1A_sthad_feats.m');

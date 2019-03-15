@@ -1,0 +1,26 @@
+chdir('G:\\Matlab\\work\\ADDIP_test\\WSK');
+img = readtiff('ADDIP_20090831_133241_MD3061969_op160_4_zd9_Good.tif');
+imcut = cutroi(img,0,1024,600,825);
+out_med = fastmedian(imcut,0,31,31);
+out_sub = imsub(imcut,out_med);
+out_ith = ath(out_sub,45,1550);
+out_med1 = median(out_ith,0,5,5);
+indexed_image = index(out_med1);
+c = cf(imcut,indexed_image,out_med1);
+unused = neighb(indexed_image,40,1);
+distances = matrixread('c:\\results.m');
+preclass = wskpreclassifier(imcut,indexed_image,out_med1,distances,c,'test.txt');
+indexed_preclass = index(preclass);
+c_preclass = cf(preclass,indexed_preclass,preclass);
+out = wskclassifier(preclass,indexed_preclass,c_preclass,50,'test1.txt');
+handle1 = imshow('orginal',img,1);
+handle2 = imshow('cut',imcut,1);
+handle3 = imshow('med',out_med1,1);
+handle4 = imshow('pre_classification',preclass,1);
+handle5 = imshow('out_classifier',out,1);
+writetiff(indexed_image,'indexed.tif',1);
+writetiff(indexed_preclass,'indexed_preclass.tif',0);
+writetiff(out_med1,'bw.tif',1);
+matrixwrite(c,'features_out.m');
+matrixwrite(distances,'distances.m');
+

@@ -1,0 +1,4 @@
+LIBRARY	"IQI"
+EXPORTS Do
+EXPORTS Introduce
+EXPORTS SetOutput

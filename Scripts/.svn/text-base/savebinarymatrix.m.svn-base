@@ -1,0 +1,16 @@
+function savebinarymatrix(data,filename)
+% saves matrix i binary format accetable by readbinarymatrix command
+
+fid = fopen(filename, 'wt');
+ss = size(data);
+fprintf(fid,'%ld\n',ss(1));
+fprintf(fid,'%ld\n',ss(2));
+for r=1:ss(1)
+    for k = 1:ss(2)
+        fprintf(fid,'%+030.20f\n',data(r,k));
+    end
+end
+        
+
+
+fclose(fid);

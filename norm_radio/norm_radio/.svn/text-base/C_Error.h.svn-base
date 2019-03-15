@@ -1,0 +1,16 @@
+#pragma once
+
+class C_Error
+{
+public:
+	C_Error(void);
+	C_Error(char* perror);
+//	char* error;
+	char error[512];
+	void SetError(char* perror);
+	void SetError(char *perror,unsigned int lin);
+	BOOL status;		// FALSE - bez errorów
+	unsigned int numline;
+public:
+	~C_Error(void);
+};

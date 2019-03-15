@@ -1,0 +1,12 @@
+maxNrIterFirstCol=10000;
+maxNrIterNexttCol=50;
+mu=1e-3;
+epsilon1=1E-15;
+epsilon2=1E-15;
+epsilon3=1E-20;
+delta=1e-6;
+Xscale=1;
+Yscale=0;
+BoundsLimtits=0.2;
+ReferenceY=0;
+MedianMask=3;

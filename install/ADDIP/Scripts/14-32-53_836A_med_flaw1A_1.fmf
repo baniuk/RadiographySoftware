@@ -1,0 +1,39 @@
+%read image
+chdir('G:\\Baza Wad\\Image 1');
+a = readtiff('14-32-53_836A_RoiRegion.tif');
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+[rows,cols] = getimsize(a);
+xend = add(rows,-1);
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+flaw = cutroi(a,3100,4050,0,xend);
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+med = fastmedianmp(flaw,0,71,71);
+sub = imsub(flaw,med);
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+out_ath = ath(sub,75,2000);
+med_ath = fastmedian(out_ath,0,9,9);
+out_sthad = STHad(sub,31,0.08);
+med_sthad = fastmedianmp(out_sthad,0,9,9);
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+in1 = index(med_ath);
+in2 = index(med_sthad);
+nr = normalize(flaw);
+%showing results
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+handle0 = imshow('original',a,1);
+handle1 = imshow('flaw',flaw,1);
+handle2 = imshow('Medniana',med,1);
+handle3 = imshow('Org-Med',sub,1);
+handle4 = imshow('ATH',med_ath,1);
+handle5 = imshow('STHad',med_sthad,1);
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%wirting results
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+writetiff(flaw,'14-32-53_836A_flaw1A.tif',0);
+writetiff(med,'14-32-53_836A_flaw1A_med.tif',0);
+writetiff(sub,'14-32-53_836A_flaw1A_sub.tif',0);
+writetiff(med_ath,'14-32-53_836A_flaw1A_ath.tif',0);
+writetiff(med_sthad,'14-32-53_836A_flaw1A_sthad.tif',0);
+writetiff(in1,'14-32-53_836A_flaw1A_index1.tif',0);
+writetiff(in2,'14-32-53_836A_flaw1A_index2.tif',0);

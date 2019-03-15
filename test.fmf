@@ -1,0 +1,48 @@
+The RSL stands for the radiography scripting language.
+
+Here are a basic rules of correct writing a script file:
+	only one instruction in line is allowed
+	comments cant be in the same line as commands
+	one line cant be longer than 256 chars
+	the file paths cant contain spaces
+	use double backslash in the file paths
+	
+
+
+original = imread('c:\\TestSample_1.3.tif');
+handle1 = imshow('original',original);
+hist(original,1);
+% handle2 = glshow('dilate',c);
+% saveimagem('c:\\testmatlab.tif',c);
+
+% Obslugiwane instrukcje:
+% IMAGE = imread('c:\\test.tif');
+% handle = imshow('nazwa_obrazka',IMAGE,type);
+%			type = 0	original image
+%			type = 1	normalized image
+% IMAGE = dilate(IMAGE,size_x,size_y);
+% IMAGE = erode(IMAGE,size_x,size_y);
+% IMAGE = bdilate(IMAGE,size_x,size_y);
+% IMAGE = berode(IMAGE,size_x,size_y);
+% IMAGE = outline(IMAGE);
+% IMAGE = median(IMAGE,type,size_x,size_y);
+%			type = 0 dla Median rectangle
+%			type = 1 dla Median cross
+%			type = 2 dla Median X
+%			type = 3 dla Median Blure
+% saveimagem('c:\\test.tif',IMAGE);
+%			saveimagem nagrywa obrazek jako bin - do odczytu pod matlabem
+% IMAGE = imadd(IMAGE, IMAGE);
+% IMAGE = imsub(IMAGE, IMAGE);
+% IMAGE = immulti(IMAGE, IMAGE);
+% IMAGE = ath(IMAGE,mask,coef);
+% IMAGE = gth(IMAGE,mask,coef,scale);
+% IMAGE = oth(IMAGE,coef);
+% IMAGE = fftfilt(IMAGE, cutoff1, cutoff2);
+%			cutoff - normalised cutoff frequency 0-1
+% hist(IMAGE,scale);
+%			scale - y-axis scale
+% particals(IMAGE,IMAGE);
+%			jeden obrazek to orygina³, drugi to binarny. Wyniki pojawiaj¹ siê w pliku tekstowym na c:
+%			Nie testowa³em tego
+% imclose(handle);

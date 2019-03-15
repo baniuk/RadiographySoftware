@@ -1,0 +1,37 @@
+chdir('C:\\addip\radiograms');
+% read the image
+original = imread('Test_part23.tif');
+cut = cutroi(original,0,1100,200,700);
+% and display it on the screen (without scaling)
+handle1 = imshow('original',cut,0);
+%
+%  median filtering
+med = fastmedian(cut,0,71,71);
+handle1_1 = imshow('Background1',med,0);
+%imwrite('Test_part23_backg.tif',med,0);
+%writetiff(med, 'Test_part23_backg.tif',0);
+%
+%med = readtiff('Test_part23_backg.tif');
+handle1_2 = imshow('Background2',med,0);
+%
+% substracting filtered image from original image
+sub = imsub(cut,med);
+handle1_3 = imshow('Subtracted',sub,1);
+%
+% thresholding
+th = sth(sub,45,0.06,32768);
+% removing small dots
+out_med = fastmedian(th,0,11,11);
+% recognizing flaws
+indexed_image = index(out_med);
+[num, tab] = calcfeat(cut,indexed_image,out_med,30,100000);
+savefeat(tab,num,'features.txt');
+im_f = genindexedimg(cut,out_med,tab,num,1);
+% displaying result
+handle3 = imshow('ith',out_med,1);
+handle4 = imshow('numbered',im_f,1);
+% performing classification process (requires ANNcls.dll)
+[out,disc] = ANNcls(tab,'ffnet_round_elong_Sofia_NN_classifier_6_5_2.ann',num);
+% writing results to file
+matrixwrite(out,'outvector.txt');
+matrixwrite(disc,'outvectorDisc.txt');

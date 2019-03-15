@@ -1,0 +1,129 @@
+KNOWN BUGS
+ - OpenCV library causes small memory leacks
+ - detectROI.dll has memory leacks
+ - using variable names the same as the function names may crash the program
+ - dm function fails if spaces are used in matrix definition string
+ - unpaired ' crash the program (FindChar function bug)
+
+HISTORY
+
+ver. 2.6.4
+	really serious bug found in C_InterpBase::FindVariable (this function was developed 2 years ago, amazing that everything worked perfectly up to now)
+ver 2.6.2
+	added support for registry (no more problems with missing dlls)
+	installer based on NullSoft (bye bye MS)
+	fixed loading scripts from command line
+	SDK needs MSVC 2008
+	should run under Vista and XP
+ver 2.6.1
+	some minor changes in ADDIP GUI (added elapsed time and fixed displaying variables)
+	rewrited function fastmedianmp to be compatibile with threads command
+	added TIME and DATE field in Introduce function
+ver 2.6
+	added new Matlab-equivalent methods in C_Matrix_Container class for easier transfering Matlab code (check SDK for details)
+		Mean, std, CutMatrixCol, CutMatrixRow, RemoveMatrixRow, RemoveMatrixCol
+	non-function data (numbers, strings) can be assigned to the variable
+	fixed error in passing string variables to functions
+	functions must end () even they dont have any parameters
+	added supprot for global variables (e.g. function threads)
+ver 2.5
+	some changes in external functions
+	fastmedian supports multithreading (fastmedinmp function)
+	fixed memory leak in C_Image_Container (imshow causes memory leaks)
+ver 2.4
+	added -debug switch
+	user commands can pass any text string to ADDIP window (not the same as an error string !!!)
+	some optimizations in fftfilt
+	a line that contains erros is printed in ADDIP window (besides line number)
+	beautiful colors added for all mesages that appear in ADDIP window 
+ver 2.3
+	Fixed memory lack in Anncls function
+	Memory lack found (redefinition of variable causes memory lack)
+	Annoying memory lack found in C_Line class
+	tiffread command has been upgraded to new version
+ver 2.2
+	Interpreter bug fixed (Check () )
+	Interpreter bug fixed (CR symbol can crash program in release version)
+	Interpreter bug fixed (long script can crash program)
+	Memory lacks found (at last!!!!)
+ver 2.1
+	imwrite command changed
+	a lot of chaotic changes in ADDIP code
+	fftfilt command rewriten
+	added CloneNonData method in C_Image_Container class
+	added CreateHeaderBuffor method in C_Image_Container class
+	fixrd bug in fftfilt command (some images crashed the program)
+	added Transpose method in C_Matrix_Container 
+	number of loaded dlls is now listed in main window
+	added debug version of ADDIP.exe (ADDIP_D.exe) for runnig dlls in debug mode
+ver 2.0
+	added Dump method in C_Matrix_Container
+	added support for external functions (currently Interface ver. 1.0 and 2.0)
+	fixed bug in interpreter (multiple string paramters error)
+	fixed bug in exit command (cant change error code)
+	memory usage optimization (C_InterpBase class, time of life of tmpfun)
+ver 1.8
+	added DESCRIPTION tag in C_Command class
+ver 1.7.5
+	examp_otsu_thres.fmf fixed
+	added dm command
+	changed format of matrix description in matrixread command 
+	some minor changes in code
+	fixed matrixread (small bug)
+	fixed genindexedimage (memory lack found)
+	fixed ANNclassifier (matrixes are supported)
+	directory name can contain spaces
+	string datatype can contain any char
+ver 1.7.4
+	added sobel command
+	added prewitt command
+	added roberts command
+	added ANNclassifier command
+	added normalize command
+	added exit(code) command
+	neural command renamed to ANNthreshold
+ver 1.7.3
+	added RunAgain button (macro that performs three operations: clear, load, run)  
+	fastmedian evolved to version 1.4
+	fixed bug: fastmedian crashed program in some cases
+ver. 1.7.2
+	help reviewed
+	added new examples
+	bdilate command evolved to version 1.1	(fixed some bugs)
+	berode command evolved to version 1.1 (fixed some bugs)
+	outline command evolved to version 1.1 (fixed some bugs)
+	fastmedian command evolved to version 1.3 (fixed some bugs+new parameter added)
+ver. 1.7.1
+	help reviewed
+	genindexedimage command evolved to version 2.0
+	fastmedian command evolved to version 1.2
+	fixed bug: fastmedian distorts edges of the image	
+ver. 1.7
+	example scripts have been reviewed
+	added icons
+	NUMBER datatype became the same as MATRIX
+	index command evolved to version 2.0
+	added calcfeatures command
+	added genindexedimage command
+	added savefeatures command
+	command line interpreter supports multi-output functions
+	oth command evolved to version 1.1
+	fastmedianqs renamed to fastmedian and evolved to version 1.1
+	added CLS button for clearing history window
+	fixed bug: script file is not unlocked after clicking CLEAR button 
+ver. 1.6.2
+	added info button for dumping commands list and their version
+	added fastmedianqs command
+	outline function is now active
+ver. 1.6.1
+	added neural command
+	added cutroi command
+	added matrixwrite command
+	added matrixread command
+	build number and program version now appear in window title
+	started command version numbering	
+ver. 1.6
+	added imwrite command
+	scripts now can be passed as a command-line parameter - user can manually assign the addip.exe to *.fmf extension and then run scripts by double-clicking
+ver. 1.5
+	- first stable version

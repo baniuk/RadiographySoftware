@@ -1,0 +1,164 @@
+ #include "Cpp_Lib.h"
+
+// This is an empty project to build DLL library of interface version 2.0
+
+double Hoare(double *tab,int size,int mid);
+double Partition(double* c, int a, int b);
+
+void Introduce(FUNC_DEF* definition)
+{
+	strcpy_s(definition->name,MAX_NAME,"iqidet");
+	strcpy_s(definition->version,MAX_VER,"1.0");
+	strcpy_s(definition->syntax,MAX_SYNT,"IMAGE = iqidet(IMAGE,NUMBER,NUMBER,NUMBER)");
+	definition->numofout = 1;
+	definition->numofin = 3;
+	definition->typesofin[0] = IMAGE;
+	definition->typesofin[1] = NUMBER;
+	definition->typesofin[2] = NUMBER;
+	definition->typesofin[3] = NUMBER;
+	definition->typesofout[0] = IMAGE;
+	definition->interface_version = 2;
+	strcpy_s(definition->description,MAX_DESC,"Detects IQI");
+	definition->ADDIP_version = 2.0;
+}
+
+void SetOutput(C_Variables** outtab, C_Variables** intab)
+{
+	// variable output has size of numofout (set in Introduce function)
+
+}
+
+void Do(C_Error& err, C_Variables** intab,int nargin, C_Variables** outtab, int nargout)
+{
+// VARIABLES ---------------------------------------------------------------------------------------------
+	C_Image_Container *image;
+	C_Matrix_Container *hei;
+	C_Matrix_Container *ang;
+	C_Matrix_Container *num;
+	C_Image_Container result;
+	int width, angle, number;
+	int k = 0, u = 0;
+	int jmp, sk = 0, tmp = 0;
+	double zmn = 0,licznik = 0;
+
+	image = (C_Image_Container*)intab[0]->data;
+	ang = (C_Image_Container*)intab[1]->data;
+	hei = (C_Image_Container*)intab[2]->data;
+	num = (C_Image_Container*)intab[3]->data;
+	result.AllocateData(image->_rows,image->_cols);
+
+	image->Normalize(0,65535);
+	height = (int)hei->data[0];
+	angle = (int)ang->data[0];
+	number = (int)num->data[0];
+
+// IMPLEMENTATION ----------------------------------------------------------------------------------------
+	if (angle <=6)							// K¥T MNIEJSZY NI¯ 6 STOPNI
+	{
+		jmp = 7;	// WARTOŒC SKOKU KLEPSYDRY
+	}
+	else if ((angle > 6) && (angle <= 9))   // K¥T Z PRZEDZIA£U 7-9 STOPNI
+	{
+		jmp = 5;	// WARTOŒC SKOKU KLEPSYDRY
+	}
+	else if ((angle > 9) && (angle <= 15))  // K¥T ZPRZEDZIA£U 10-15 STOPNI
+	{
+		jmp = 3;	// WARTOŒC SKOKU KLEPSYDRY
+	}
+	else if (angle > 15)					// K¥T WIÊKSZY NI¯ 15 STOPNI
+	{
+		jmp = 1;	// WARTOŒC SKOKU KLEPSYDRY
+	}
+	
+	int height = (jmp * width) + number ;
+
+	double* vect=new double [width*height];
+
+	for(unsigned int j = 0; j < image->_rows-height-1; j++)							// WIERSZE OBRAZU
+	{			
+		for(unsigned int i = 0; i < image->_cols-width-1; i++)						// KOLUMNY OBRAZU
+		{
+			for(k = 0; k <= height-1; )										// WIERSZE MASKI
+			{
+				for (tmp = 0; tmp < jmp; tmp++)								// ZMIANA SKOKU KLEPSYDRY
+				{
+					for(int l = 0; l <= width-1; l++)						// KOLUMNY MASKI
+					{
+						image->GetPixel(k+j,l+i,zmn);
+						vect[u]=zmn;
+						u++;
+					}
+					k++;
+				}	
+				tmp = 0;
+				if (k > ((width/2+1)*jmp))									// CZY JU¯ ZA ZWÊ¯ENIEM?
+				{
+					sk--;													// KLEPSYDRA SIÊ ZWÊ¯A
+				}
+				else
+				{
+					sk++;													// KLEPSYDRA SIÊ ROZSZERZA
+				}
+			}
+			double war;
+			war=Hoare(vect,u,u/2);
+			result.SetPixel(j,i,war);
+			sk = u = 0;
+		}
+	}
+
+// ERROR MESSAGE ------------------------------------------------------------------------------------------
+	if(width % 2 == 0)
+	{
+		err.SetError("iqidet: Width parameter incorrect");
+		return;
+	}
+
+// DEPLOYING RESULTS --------------------------------------------------------------------------------------
+//	result.Dump("C:\\plik.m");
+
+	outtab[0]->AssignValue((void*)&result,err);
+
+}
+
+// REQUIRED FUNCTIONS ------------------------------------------------------------------------------------
+double Hoare(double *tab,int size,int mid)
+{
+	int n,i,j;
+	n=size;
+	double k,w;
+	w=mid;
+	i=0;
+	j=n-1;
+	n=(int)w;
+	while (i!=j)
+		{
+			k=Partition(tab,i,j);
+			k=k-i+1;
+			if (k>=w) j=i+(int)k-1;
+				if (k<w)
+				{
+					w-=(int)k;
+					i+=(int)k;
+				}
+		}
+	return(tab[i]);
+}
+
+double Partition(double* c, int a, int b)
+{
+	double e,tmp;
+	e=c[a];        //elemennt dzielacy
+	while (a<b)
+    {
+		while ((a<b) && (c[b]>=e)) b--;
+		while ((a<b) && (c[a]<e)) a++;
+		if (a<b)
+		{
+			tmp=c[a];
+			c[a]=c[b];
+			c[b]=tmp;
+		}
+	}
+	return a;
+}

@@ -1,0 +1,6 @@
+chdir('C:\\');
+% cutting the original image
+original = imread('TestSample_2_3.tif');
+handle1 = imshow('original',original,0);
+cut = cutroi(original,0,504,200,520);
+handle1 = imshow('cut',cut,0);

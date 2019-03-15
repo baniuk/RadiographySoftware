@@ -1,0 +1,20 @@
+a = imread('c:\\weld2_1.tif');
+% to jest ten radiogram który przys³a³eœ mailem
+handle = imshow('original',a,0);
+hist(a,1);
+out_gth = gth(a,15,0.9);
+out_ath = ath(a,75,200);
+out_ith = ith(a,15,1.5);
+out_med = median(out_ath,1,15,15);
+out_out = outline(out_gth);
+out_dil = dilate(a,15,15);
+out_bdil = bdilate(out_out,15,15);
+
+
+handle1 = imshow('gth',out_gth,1);
+handle2 = imshow('ath',out_ath,1);
+handle3 = imshow('median_after_thresholding',out_med,0);
+handle4 = imshow('outline',out_out,1);
+handle5 = imshow('dilate',out_dil,0);
+handle6 = imshow('bdilate',out_bdil,1);
+handle7 = imshow('ith',out_ith,1);

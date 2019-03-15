@@ -1,0 +1,11 @@
+chdir('C:\\');
+%reading the image
+a = imread('FilmFree_A_Szczecin_NA_NA_NA_TC_Spoiny_27-09-2007_14-40-04_171A.tif');
+handle = imshow('original',a,1);
+%crop the white area around the image
+b = cropImage(a);
+
+handle1 = imshow('croped',b,1);
+
+
+

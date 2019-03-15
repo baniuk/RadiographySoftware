@@ -1,0 +1,7 @@
+chdir('C:\\');
+% read image
+original = imread('TestSample_1_1.tif');
+% and display it on the screen (without scaling)
+handle1 = imshow('original',original,0);
+% then let's take a look at the histogram
+hist(original,1);

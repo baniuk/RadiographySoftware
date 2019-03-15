@@ -1,0 +1,18 @@
+chdir('C:\\addip\\radiograms');
+% read image
+%
+original = readtiff('te09347-591.tif');
+% original = readtiff('te0698-178.tif');
+%
+handle1 = imshow('Original',original,1);
+%
+% cut part from original
+cut = cutroi(original,0,500,750,1550);
+%
+% write new image
+writetiff(cut,'copy.tif',0);
+%
+copy = readtiff('copy.tif');
+%
+% and display it on the screen (with scaling)
+handle2 = imshow('Copy',copy,1);

@@ -1,0 +1,10 @@
+%read image
+chdir('c:\addip\radiograms');
+%
+inIm = readtiff('T_14-32-53_836A.tif');
+%%
+reg = dm('[0,0,0,0]');
+outIm=imNormalize(inIm,65535,reg,9,2,0,20000);
+%%
+handle0 = imshow('inIm',inIm,0);
+handle1 = imshow('outIm',outIm,0);

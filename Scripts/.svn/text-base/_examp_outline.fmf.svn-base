@@ -1,0 +1,9 @@
+chdir('C:\\addip\radiograms');
+a = imread('TestSample_2_3.tif');
+handle = imshow('Original',a,0);
+out_med = fastmedian(a,0,31,31);
+out_sub = imsub(a,out_med);
+out_ith = ith(out_sub,0.8);
+out_med1 = fastmedian(out_ith,0,9,9);
+out_out = outline(out_med1);
+handle1 = imshow('Outline',out_out,1);

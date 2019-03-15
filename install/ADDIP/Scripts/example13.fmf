@@ -1,0 +1,8 @@
+chdir('C:\\');
+% neural network filtering
+original = imread('TestSample_2.3.tif');
+handle1 = imshow('original',original,0);
+cut = cutroi(original,0,504,200,520);
+nn = neural(cut,'crossMask_33x33_ANN_ff_14_7_1.ann')
+handle1 = imshow('nn',nn,1);
+imwrite('nn.tif',nn,1);

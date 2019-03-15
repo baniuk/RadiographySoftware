@@ -1,0 +1,28 @@
+chdir('c:\\Test Welds - Technic Control\\');
+im = imread('FilmFreeDigitisation_CIT_NA_DR3000_NA_NA_1_Rads_31-03-2006_15-24-24_te09347-591.tif');
+
+imcut = cutroi(im,5500,7600,201,1799);
+
+handle1 = imshow('imcut',imcut,1);
+
+[RegVect,MedRegVect,Roi] = detectROI(imcut,90,10,50,20,5,0,'C:\\Program Files\\PSz\\ADDIP\\ADDIP\\DLL\\ApproximationParam.txt');
+
+matrixwrite(MedRegVect,'ROILines_2.txt');
+
+handle2 = imshow('Roi',Roi,0);
+
+imwrite('c:\\Test Welds - Technic Control\\ROI_2.tif',Roi,0);
+
+% Parameters read from ROILines_2.txt (from 7 parameters cut betweem 1 and 7)  539-1366(1365)
+im_temp1= cutroi(imcut,1,729,539,1365);
+im_temp2 = cutroi(imcut,690,1380,539,1365);
+im_temp3 = cutroi(imcut,1350,2100,539,1365);
+
+handle3 = imshow('im_temp1',im_temp1,1);
+handle4 = imshow('im_temp2',im_temp2,1);
+handle5 = imshow('im_temp3',im_temp3,1);
+
+
+%imwrite('c:\\Test Welds - Technic Control\\TestIm2.1.tif',im_temp1,0);
+%imwrite('c:\\Test Welds - Technic Control\\TestIm2.2.tif',im_temp2,0);
+%imwrite('c:\\Test Welds - Technic Control\\TestIm2.3.tif',im_temp3,0);

@@ -1,0 +1,7 @@
+chdir('C:\\addip\radiograms');
+% reading the features table from file
+in = matrixread('inpvector.txt');
+% performing classification process
+out = ANNclassifier(in,'ffnet_xor_NN_classifier_10_5_2.ann');
+% writing results to file
+matrixwrite(out,'outvector.txt');

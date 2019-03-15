@@ -1,0 +1,19 @@
+#pragma once
+#include "c_matrix_container.h"
+
+class C_Image_Container :
+	public C_Matrix_Container
+{
+public:
+	C_Image_Container(void);
+	char* ReturnIPLBuffor(unsigned short w1, unsigned short w2);
+	char* ReturnIPLBuffor(void);
+	void CloneObject(C_Image_Container* dest);
+	void Normalize(unsigned short w1, unsigned short w2);
+	void Hist(unsigned int val,C_Matrix_Container &out);
+	BOOL isBinary;
+	unsigned long xorigin, yorigin;
+	virtual ~C_Image_Container(void);
+private:
+	char* _iplbuffor;
+};

@@ -1,0 +1,4 @@
+LIBRARY	"Command_ImRead"
+EXPORTS Do
+EXPORTS Introduce
+EXPORTS SetOutput

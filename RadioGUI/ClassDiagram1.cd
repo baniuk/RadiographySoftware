@@ -1,0 +1,536 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" GroupingSetting="Access" MembersFormat="FullSignature">
+  <Class Name="CAboutDlg" Collapsed="true">
+    <Position X="120" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAABAAhBAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>RadioGUIDlg.cpp</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="C_MyEditDialog" Collapsed="true">
+    <Position X="121.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAADAAAgAAAAAAAAAhBAAIAIQAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>_MyEditDialog.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="C_OpenGL" Collapsed="true">
+    <Position X="116.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>A4CBBAAIAAEAAAAAAkBBAAAIACAAAEBCQRgBgABAYAg=</HashCode>
+      <FileName>_OpenGL.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="C_OpenGL_Hist" Collapsed="true">
+    <Position X="118.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AoChEACAAAEAAgAAAkBoAJQIgCAAAEAEQQAAAEBAACA=</HashCode>
+      <FileName>_OpenGL_Hist.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="C_CommandStack" Collapsed="true">
+    <Position X="116.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAACAAAAAAAQEAICBABAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>C_CommandStack.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="C_DLL_Name_Holder" Collapsed="true">
+    <Position X="118.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAEAAAQAAAACAAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>C_DLL_Name_Holder.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="C_DLL_Operation" Collapsed="true">
+    <Position X="120" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAKAAACAAAAAAAABIgAkACAAAgAAAAEAAAAQACQAAAQ=</HashCode>
+      <FileName>C_DLL_Operation.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="MyListBox" Collapsed="true">
+    <Position X="118.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAEAIkBAAIAEAAAAAECADAAAAEAAAAA=</HashCode>
+      <FileName>MyListBox.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CRadioGUIApp" Collapsed="true">
+    <Position X="121.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAAAgBAAAAAAAAAAAQAAAAAAAAAAAA=</HashCode>
+      <FileName>RadioGUI.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CRadioGUIDlg" Collapsed="true">
+    <Position X="116.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>lCSIkBOQAwABAAAAAhFEABBZCIAEIAxIEEIAAQQQIgA=</HashCode>
+      <FileName>RadioGUIDlg.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="C_Command_Add" Collapsed="true">
+    <Position X="75.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAIAAA=</HashCode>
+      <FileName>g:\Documenty\Visual Studio 2008\Projects\RadiographySoftware\Interpreter\C_Command_Add.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="C_Command_Annclasifier" Collapsed="true">
+    <Position X="89.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAADAgAACAQAABAIAACAAAgAAACCCAAAQAAAI=</HashCode>
+      <FileName>g:\Documenty\Visual Studio 2008\Projects\RadiographySoftware\Interpreter\C_Command_Annclasifier.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="C_Command_Bdilate" Collapsed="true">
+    <Position X="102.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAAAAAAEAAAAAAAACAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>g:\Documenty\Visual Studio 2008\Projects\RadiographySoftware\Interpreter\C_Command_Bdilate.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="C_Command_Berode" Collapsed="true">
+    <Position X="6" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAABAAAACAAAAAAQAAAAAAAAAAA=</HashCode>
+      <FileName>g:\Documenty\Visual Studio 2008\Projects\RadiographySoftware\Interpreter\C_Command_Berode.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="C_Command_Chdir" Collapsed="true">
+    <Position X="19.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAQAAAAAAAAACAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>g:\Documenty\Visual Studio 2008\Projects\RadiographySoftware\Interpreter\C_Command_Chdir.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="C_Command_Cutroi" Collapsed="true">
+    <Position X="30.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAABACCAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>g:\Documenty\Visual Studio 2008\Projects\RadiographySoftware\Interpreter\C_Command_Cutroi.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="C_Command_Dilate" Collapsed="true">
+    <Position X="42" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAAAAAAAAAAAECAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>g:\Documenty\Visual Studio 2008\Projects\RadiographySoftware\Interpreter\C_Command_Dilate.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="C_Command_DLL" Collapsed="true">
+    <Position X="53.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABqAAAAAAAAAAEAAAAAEAAAACAAAAAAAEAAQAiYAQAA=</HashCode>
+      <FileName>g:\Documenty\Visual Studio 2008\Projects\RadiographySoftware\Interpreter\C_Command_DLL.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="C_Command_Dm" Collapsed="true">
+    <Position X="64.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAAAAAAAAAAAIAAAAAACAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>g:\Documenty\Visual Studio 2008\Projects\RadiographySoftware\Interpreter\C_Command_Dm.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="C_Command_Erode" Collapsed="true">
+    <Position X="78" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAABAAAAAAAEAAAAAAAAAAAACAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>g:\Documenty\Visual Studio 2008\Projects\RadiographySoftware\Interpreter\C_Command_Erode.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="C_Command_Eth" Collapsed="true">
+    <Position X="91.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAgAAEACAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>g:\Documenty\Visual Studio 2008\Projects\RadiographySoftware\Interpreter\C_Command_Eth.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="C_Command_Exit" Collapsed="true">
+    <Position X="105" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAQAAAAAIAAAA=</HashCode>
+      <FileName>g:\Documenty\Visual Studio 2008\Projects\RadiographySoftware\Interpreter\C_Command_Exit.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="C_Command_FastMedianqs" Collapsed="true">
+    <Position X="8.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAACAAAAAAAAAAQAAAAAAAACAAIAAAAAAAAAAABAAA=</HashCode>
+      <FileName>g:\Documenty\Visual Studio 2008\Projects\RadiographySoftware\Interpreter\C_Command_FastMedianqs.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="C_Command_Features" Collapsed="true">
+    <Position X="21.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAQAAAAAECAAAAAAAAAAAAEAAAAA=</HashCode>
+      <FileName>g:\Documenty\Visual Studio 2008\Projects\RadiographySoftware\Interpreter\C_Command_Features.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="C_Command_Fftfilt" Collapsed="true">
+    <Position X="33" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAQAAAAACCAAAAAAACAADAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>g:\Documenty\Visual Studio 2008\Projects\RadiographySoftware\Interpreter\C_Command_Fftfilt.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="C_Command_Fillholes" Collapsed="true">
+    <Position X="44.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAABCAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>g:\Documenty\Visual Studio 2008\Projects\RadiographySoftware\Interpreter\C_Command_Fillholes.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="C_Command_Filter2d" Collapsed="true">
+    <Position X="55.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAABAAACAAAAAAAQAAAAAgAAAA=</HashCode>
+      <FileName>g:\Documenty\Visual Studio 2008\Projects\RadiographySoftware\Interpreter\C_Command_Filter2d.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="C_Command_GLshow" Collapsed="true">
+    <Position X="66.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAAAAAAAAAACJAAgAAAAAACAAgAAAA=</HashCode>
+      <FileName>g:\Documenty\Visual Studio 2008\Projects\RadiographySoftware\Interpreter\C_Command_GLshow.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="C_Command_Gth" Collapsed="true">
+    <Position X="80.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAEACAAACAAAAAAAAAAAAAA=</HashCode>
+      <FileName>g:\Documenty\Visual Studio 2008\Projects\RadiographySoftware\Interpreter\C_Command_Gth.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="C_Command_Hist" Collapsed="true">
+    <Position X="93.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAAAAAAAAgAAAAAAAAKAAAAAAAAAACAAAQAAA=</HashCode>
+      <FileName>g:\Documenty\Visual Studio 2008\Projects\RadiographySoftware\Interpreter\C_Command_Hist.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="C_Command_Imadd" Collapsed="true">
+    <Position X="107.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAEAAAAA=</HashCode>
+      <FileName>g:\Documenty\Visual Studio 2008\Projects\RadiographySoftware\Interpreter\C_Command_Imadd.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="C_Command_Imclose" Collapsed="true">
+    <Position X="10.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAABAEAAAAAA=</HashCode>
+      <FileName>g:\Documenty\Visual Studio 2008\Projects\RadiographySoftware\Interpreter\C_Command_Imclose.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="C_Command_Immulti" Collapsed="true">
+    <Position X="24" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAACAAABAAAAABAAAAAAAA=</HashCode>
+      <FileName>g:\Documenty\Visual Studio 2008\Projects\RadiographySoftware\Interpreter\C_Command_Immulti.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="C_Command_Imread" Collapsed="true">
+    <Position X="35.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAAAAAAAAAAABAAAAACAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>g:\Documenty\Visual Studio 2008\Projects\RadiographySoftware\Interpreter\C_Command_Imread.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="C_Command_Imshow" Collapsed="true">
+    <Position X="46.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAAAAAAAAAAAAAEAAAAAASAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>g:\Documenty\Visual Studio 2008\Projects\RadiographySoftware\Interpreter\C_Command_Imshow.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="C_Command_Imsub" Collapsed="true">
+    <Position X="57.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAACA=</HashCode>
+      <FileName>g:\Documenty\Visual Studio 2008\Projects\RadiographySoftware\Interpreter\C_Command_Imsub.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="C_Command_Imwrite" Collapsed="true">
+    <Position X="69" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAgAACAAAAAAAAACAAAAAAAA=</HashCode>
+      <FileName>g:\Documenty\Visual Studio 2008\Projects\RadiographySoftware\Interpreter\C_Command_Imwrite.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="C_Command_Ith" Collapsed="true">
+    <Position X="82.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAAAAAAAAAEACAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>g:\Documenty\Visual Studio 2008\Projects\RadiographySoftware\Interpreter\C_Command_Ith.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="C_Command_Load" Collapsed="true">
+    <Position X="96" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAAAAAAAAAACAAAAAAAAAAAAAAAEAA=</HashCode>
+      <FileName>g:\Documenty\Visual Studio 2008\Projects\RadiographySoftware\Interpreter\C_Command_Load.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="C_Command_Matrixread" Collapsed="true">
+    <Position X="109.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAQAAACAAAAAAAAAFAAAAAAAA=</HashCode>
+      <FileName>g:\Documenty\Visual Studio 2008\Projects\RadiographySoftware\Interpreter\C_Command_Matrixread.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="C_Command_Matrixwrite" Collapsed="true">
+    <Position X="12.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAAAAAAAAABCAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>g:\Documenty\Visual Studio 2008\Projects\RadiographySoftware\Interpreter\C_Command_Matrixwrite.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="C_Command_Median" Collapsed="true">
+    <Position X="26.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAABACAAAQAAAAAQABAAAAAA=</HashCode>
+      <FileName>g:\Documenty\Visual Studio 2008\Projects\RadiographySoftware\Interpreter\C_Command_Median.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="C_Command_Neural" Collapsed="true">
+    <Position X="37.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAAAAAAAADAAAACAQAABAIAACAAAAAECCCCACAgAAAM=</HashCode>
+      <FileName>g:\Documenty\Visual Studio 2008\Projects\RadiographySoftware\Interpreter\C_Command_Neural.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="C_Command_Normalize" Collapsed="true">
+    <Position X="48.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAgAAAAAICAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>g:\Documenty\Visual Studio 2008\Projects\RadiographySoftware\Interpreter\C_Command_Normalize.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="C_Command_Nth" Collapsed="true">
+    <Position X="60" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAEADAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>g:\Documenty\Visual Studio 2008\Projects\RadiographySoftware\Interpreter\C_Command_Nth.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="C_Command_Oth" Collapsed="true">
+    <Position X="71.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAEACAAAAAAAAAAIAAAAAAA=</HashCode>
+      <FileName>g:\Documenty\Visual Studio 2008\Projects\RadiographySoftware\Interpreter\C_Command_Oth.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="C_Command_Outline" Collapsed="true">
+    <Position X="84.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAABAAAAAAAACAAAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>g:\Documenty\Visual Studio 2008\Projects\RadiographySoftware\Interpreter\C_Command_Outline.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="C_Command_Particals" Collapsed="true">
+    <Position X="98.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAQAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAIAAAA=</HashCode>
+      <FileName>g:\Documenty\Visual Studio 2008\Projects\RadiographySoftware\Interpreter\C_Command_Particals.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="C_Command_Prewitt" Collapsed="true">
+    <Position X="111.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAAAAAAAAAAAAAAAACAAAAAAAAAEAAAAAAAA=</HashCode>
+      <FileName>g:\Documenty\Visual Studio 2008\Projects\RadiographySoftware\Interpreter\C_Command_Prewitt.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="C_Command_Print" Collapsed="true">
+    <Position X="15" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgAAAAAAAAAAAAAAAACAAAAACAAAAAAAAAAAA=</HashCode>
+      <FileName>g:\Documenty\Visual Studio 2008\Projects\RadiographySoftware\Interpreter\C_Command_Print.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="C_Command_Roberts" Collapsed="true">
+    <Position X="28.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAACgAAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>g:\Documenty\Visual Studio 2008\Projects\RadiographySoftware\Interpreter\C_Command_Roberts.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="C_Command_Savefeatures" Collapsed="true">
+    <Position X="39.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAABACAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>g:\Documenty\Visual Studio 2008\Projects\RadiographySoftware\Interpreter\C_Command_Savefeatures.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="C_Command_SaveImageM" Collapsed="true">
+    <Position X="51" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAAAAAAAAAAAAAAACAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>g:\Documenty\Visual Studio 2008\Projects\RadiographySoftware\Interpreter\C_Command_SaveImageM.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="C_Command_Showfeatures" Collapsed="true">
+    <Position X="62.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAIAAAAAAAAQAAAAIACAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>g:\Documenty\Visual Studio 2008\Projects\RadiographySoftware\Interpreter\C_Command_Showfeatures.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="C_Command_Sin" Collapsed="true">
+    <Position X="73.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAgAAAAACAAAAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>g:\Documenty\Visual Studio 2008\Projects\RadiographySoftware\Interpreter\C_Command_Sin.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="C_Command_Sobel" Collapsed="true">
+    <Position X="87" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAIQAAAAAAAAA=</HashCode>
+      <FileName>g:\Documenty\Visual Studio 2008\Projects\RadiographySoftware\Interpreter\C_Command_Sobel.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="C_Command_Sth" Collapsed="true">
+    <Position X="100.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAACAAEACAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>g:\Documenty\Visual Studio 2008\Projects\RadiographySoftware\Interpreter\C_Command_Sth.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="C_Command_Th" Collapsed="true">
+    <Position X="114" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAABEAAAAACAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>g:\Documenty\Visual Studio 2008\Projects\RadiographySoftware\Interpreter\C_Command_Th.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="C_Command_Thread" Collapsed="true">
+    <Position X="17.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAACAAAAAAACAAAAAAAAAA=</HashCode>
+      <FileName>g:\Documenty\Visual Studio 2008\Projects\RadiographySoftware\Interpreter\C_Command_Thread.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="C_Commands" Collapsed="true">
+    <Position X="60" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ADAAAQABSCAACQgAIQIAJCgACAAEAABICABIAAEABAQ=</HashCode>
+      <FileName>g:\Documenty\Visual Studio 2008\Projects\RadiographySoftware\Interpreter\C_Commands.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="C_Error" Collapsed="true">
+    <Position X="121.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAACIAQAAAAAAEAAABAAAAACAIAAAAQAAAgAQA=</HashCode>
+      <FileName>g:\Documenty\Visual Studio 2008\Projects\RadiographySoftware\Interpreter\C_Error.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="C_Image_Container" Collapsed="true">
+    <Position X="0.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAQAAQAAAAQCEAAEAAgAgAAABQAABAAAAAACAgAAAA=</HashCode>
+      <FileName>g:\Documenty\Visual Studio 2008\Projects\RadiographySoftware\Interpreter\C_Image_Container.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="C_InterpBase" Collapsed="true">
+    <Position X="116.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>MAkEEKIBACQAkRAIAAEAAAAABSAAAgIIIAAAAABCwAA=</HashCode>
+      <FileName>g:\Documenty\Visual Studio 2008\Projects\RadiographySoftware\Interpreter\C_InterpBase.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="C_Line" Collapsed="true">
+    <Position X="118.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACEEEAAAAgAAEAAAQAEEAQAiUIQAAgEAAgEBIAAICIA=</HashCode>
+      <FileName>g:\Documenty\Visual Studio 2008\Projects\RadiographySoftware\Interpreter\C_Line.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="C_Matrix_Container" Collapsed="true">
+    <Position X="0.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QgJJAJQAAAAggECJAAAAgACAAQAABDAEAAAQACgAAAQ=</HashCode>
+      <FileName>g:\Documenty\Visual Studio 2008\Projects\RadiographySoftware\Interpreter\C_Matrix_Container.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="C_MultiProcesor" Collapsed="true">
+    <Position X="120" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAAAAABAAAAAAAgAAAAAAAAAAAAAAAABBAAAAQAAAAA=</HashCode>
+      <FileName>g:\Documenty\Visual Studio 2008\Projects\RadiographySoftware\Interpreter\C_MultiProcesor.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="C_Variables" Collapsed="true">
+    <Position X="4.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABAAAAAACAAAAAAAAFBAAAAAAQAAACAAA=</HashCode>
+      <FileName>g:\Documenty\Visual Studio 2008\Projects\RadiographySoftware\Interpreter\C_Variables.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="C_Variables_Image" Collapsed="true">
+    <Position X="1" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAACAAAAAgAAAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>g:\Documenty\Visual Studio 2008\Projects\RadiographySoftware\Interpreter\C_Variables_Image.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="C_Variables_Matrix" Collapsed="true">
+    <Position X="3.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAACAAgAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>g:\Documenty\Visual Studio 2008\Projects\RadiographySoftware\Interpreter\C_Variables_Matrix.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="C_Variables_Number" Collapsed="true">
+    <Position X="5.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAACAEAAAAAAAAAAAAAAAAAAgAAA=</HashCode>
+      <FileName>g:\Documenty\Visual Studio 2008\Projects\RadiographySoftware\Interpreter\C_Variables_Number.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="C_Variables_String" Collapsed="true">
+    <Position X="7.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAAAAACAAAAAAAAAAAAAAAAAAQAAAAA=</HashCode>
+      <FileName>g:\Documenty\Visual Studio 2008\Projects\RadiographySoftware\Interpreter\C_Variables_String.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Typedef Name="DLL_INTR" Collapsed="true">
+    <Position X="121.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>C_DLL_Operation.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="DLL_AG" Collapsed="true">
+    <Position X="116.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>C_DLL_Operation.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="DLL_DO_INT1" Collapsed="true">
+    <Position X="118.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>C_DLL_Operation.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="DLL_DO_INT2" Collapsed="true">
+    <Position X="120" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>C_DLL_Operation.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Typedef Name="DLL_SET_OUTPUT" Collapsed="true">
+    <Position X="116.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>C_DLL_Operation.h</FileName>
+    </TypeIdentifier>
+  </Typedef>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

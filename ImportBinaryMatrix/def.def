@@ -1,0 +1,4 @@
+LIBRARY	"ImportBinaryMatrix"
+EXPORTS Do
+EXPORTS Introduce
+EXPORTS SetOutput

@@ -1,0 +1,4 @@
+LIBRARY	"Command_Add"
+EXPORTS Do
+EXPORTS Introduce
+EXPORTS SetOutput

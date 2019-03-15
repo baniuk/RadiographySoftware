@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="windows-1250"?>
+<VisualStudioUserFile
+	ProjectType="Visual C++"
+	Version="9,00"
+	ShowAllFiles="false"
+	>
+	<Configurations>
+		<Configuration
+			Name="Debug|Win32"
+			>
+			<DebugSettings
+				Command="C:\\ADDIP\\ADDIP_D.exe"
+				WorkingDirectory="C:\ADDIP"
+				CommandArguments="G:\\Baza Wad\\Image 1\\14-32-53_836A_med_flaw1B_2.fmf"
+				Attach="false"
+				DebuggerType="3"
+				Remote="1"
+				RemoteMachine="MARCIN-PC"
+				RemoteCommand=""
+				HttpUrl=""
+				PDBPath=""
+				SQLDebugging=""
+				Environment=""
+				EnvironmentMerge="true"
+				DebuggerFlavor="0"
+				MPIRunCommand=""
+				MPIRunArguments=""
+				MPIRunWorkingDirectory=""
+				ApplicationCommand=""
+				ApplicationArguments=""
+				ShimCommand=""
+				MPIAcceptMode=""
+				MPIAcceptFilter=""
+			/>
+		</Configuration>
+		<Configuration
+			Name="Release|Win32"
+			>
+			<DebugSettings
+				Command="C:\\ADDIP\\ADDIP.exe"
+				WorkingDirectory="C:\ADDIP"
+				CommandArguments="G:\\Baza Wad\\Image 1\\14-32-53_836A_med_flaw1B_2.fmf"
+				Attach="false"
+				DebuggerType="3"
+				Remote="1"
+				RemoteMachine="MARCIN-PC"
+				RemoteCommand=""
+				HttpUrl=""
+				PDBPath=""
+				SQLDebugging=""
+				Environment=""
+				EnvironmentMerge="true"
+				DebuggerFlavor="0"
+				MPIRunCommand=""
+				MPIRunArguments=""
+				MPIRunWorkingDirectory=""
+				ApplicationCommand=""
+				ApplicationArguments=""
+				ShimCommand=""
+				MPIAcceptMode=""
+				MPIAcceptFilter=""
+			/>
+		</Configuration>
+	</Configurations>
+</VisualStudioUserFile>

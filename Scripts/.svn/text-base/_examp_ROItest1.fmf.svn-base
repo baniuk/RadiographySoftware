@@ -1,0 +1,32 @@
+chdir('c:\\addip\\radiograms');
+im = imread('FilmFreeDigitisation_CIT_NA_DR3000_NA_NA_1_Rads_31-03-2006_15-30-42_te0698-178.tif');
+
+imcut = cutroi(im,101,2999,101,1899);
+
+handle1 = imshow('imcut',imcut,1);
+
+
+[RegVect,MedRegVect,Roi] = detectROI(imcut,90,10,50,10,20,0,'c:\\addip\\radiograms\\ApproximationParam.txt');
+matrixwrite(MedRegVect,'ROILines_1.txt');
+handle2 = imshow('Roi',Roi,0);
+imwrite('c:\\addip\\radiograms\\ROI_1.tif',Roi,0);
+% Parameters read from ROILines_1.txt (from 7 parameters cut betweem 1 and 7)  628-1428
+
+im_temp1 = cutroi(imcut,1,999,628,1428);
+im_temp2 = cutroi(imcut,950,1950,628,1428);
+im_temp3 = cutroi(imcut,1900,2898,628,1428);
+
+handle3 = imshow('im_temp1',im_temp1,1);
+handle4 = imshow('im_temp2',im_temp2,1);
+handle5 = imshow('im_temp3',im_temp3,1);
+%imwrite('c:\\addip\\radiograms\\TestIm1.1.tif',im_temp1,0);
+%imwrite('c:\\addip\\radiograms\\TestIm1.2.tif',im_temp2,0);
+%imwrite('c:\\addip\\radiograms\\TestIm1.3.tif',im_temp3,0);
+
+
+
+
+
+
+
+

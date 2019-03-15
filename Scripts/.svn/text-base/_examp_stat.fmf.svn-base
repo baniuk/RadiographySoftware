@@ -1,0 +1,15 @@
+chdir('C:\\addip\\radiograms');
+% read image
+or1 = readtiff('TestSample_1_1.tif');
+mm = dm('[0,0,0,0]');
+%or = mult_add(or1,1,33);
+obraz= norm_radio(or1,65535,1000,2,8,mm);
+[max,min,sred,med]=statistic(obraz,mm);
+imwrite('C:\\addip\\radiograms\\cos1.tif',obraz,1);
+drukuj = imshow('original1', obraz,0);
+savestat('C:\\addip\\radiograms\\stat1.txt',max,min,sred,med);
+
+
+
+
+

@@ -1,0 +1,5 @@
+LIBRARY	"NNDataPrepare"
+EXPORTS Do
+EXPORTS Introduce
+EXPORTS SetOutput
+EXPORTS AssignGlobals

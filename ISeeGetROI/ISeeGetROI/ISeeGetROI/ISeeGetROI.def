@@ -1,0 +1,4 @@
+LIBRARY	"ISeeGetROI"
+EXPORTS Do
+EXPORTS Introduce
+EXPORTS SetOutput
